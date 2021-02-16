@@ -4,11 +4,6 @@
 
 <% if current_user %>
 <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-<% if current_user.admin || current_user.employee %>
-<h1>You are logged in as employee or admin</h1> 
-<% else %>
-<h1>You are logged in as a regular user</h1> 
-<% end %>
 <% else %>
 <%= link_to 'Sign up', new_user_registration_path %>
 <%= link_to 'Sign in', new_user_session_path %>
