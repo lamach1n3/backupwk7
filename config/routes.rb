@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   # post "/quotes"      => "quotes#create"
    
   devise_scope :user do 
-    get "/login" => "devise/sessions#new" 
+    get "/login" => "devise/sessions#new"
+  end 
 end
