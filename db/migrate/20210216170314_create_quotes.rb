@@ -16,8 +16,10 @@ class CreateQuotes < ActiveRecord::Migration[5.2]
       t.decimal :install_fees
       t.decimal :total_price
       t.decimal :unit_price
-      t.string :building_tpe
+      t.string :building_type
       t.timestamp :date
+
+      t.timestamps
     end
   end
 end
