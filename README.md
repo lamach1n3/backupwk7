@@ -8,9 +8,7 @@ Application for website of the Company of Rocket Elevators
 ### pour la creation des tables dans mysql avec migration
 rails g migration CreateTableName
 pour leads, address, customers, buildings, buildingdetails, batteries, columns et elvator
-### pour la creation des tables dans postgres avec migration
-DB=warehouse rails g migration CreateTableName
-pour factquotes, factelevators, dimcustomers
+
 ### pour les seeds
 faker a ete utiliser pour la creation de donnees fictive
 https://github.com/faker-ruby/faker#default
