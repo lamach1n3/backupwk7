@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/error'        => 'pages#error'
   get '/quote'        =>  'pages#quote'
   get '/residential'  => 'pages#residential'
+  get '/admin'        => 'pages#admin'
   # get '/charts'       => 'pages#charts'
   # get '/diagram'      => 'pages#diagram'
 
