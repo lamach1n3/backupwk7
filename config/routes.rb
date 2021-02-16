@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'home/index'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -9,7 +10,6 @@ Rails.application.routes.draw do
   get '/error'        => 'pages#error'
   get '/quote'        =>  'pages#quote'
   get '/residential'  => 'pages#residential'
-  get '/admin'        => 'pages#admin'
   # get '/charts'       => 'pages#charts'
   # get '/diagram'      => 'pages#diagram'
 
