@@ -12,8 +12,10 @@ Application for website of the Company of Rocket Elevators
 * gem 'faker'
 
 
-* dfd
-* df
+* gem 'rubocop'
+      https://github.com/rubocop-hq/rubocop
+* gem 'sprockets-rails'
+      https://github.com/rails/sprockets-rails/
 * df
 * df
 * df
