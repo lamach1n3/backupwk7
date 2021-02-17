@@ -4,7 +4,21 @@ Application for website of the Company of Rocket Elevators
 <https://tailleferjf.cf/>
 ## Gems used
 * gem 'devise'
+
+
 * gem 'rails-admin'
+
+
+* gem 'faker'
+
+
+* dfd
+* df
+* df
+* df
+* df
+* fd
+* 
 
 ### pour la creation des tables dans mysql avec model
 rails g model TableName
