@@ -19,4 +19,8 @@ Rails.application.routes.draw do
   devise_scope :user do 
     get "/login" => "devise/sessions#new" 
   end
+
+  Rails.application.routes.draw do
+    resources :quotes, only: [:new, :create]
+  end
 end
