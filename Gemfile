@@ -24,12 +24,6 @@ gem 'faker'
 gem 'rubocop', require: false
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 
-<<<<<<< HEAD
-=======
-# ===============================================================
-# ===============================================================
-
->>>>>>> 1f29dc2db2f3eb2451d58521daff8dfcebc67f60
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
