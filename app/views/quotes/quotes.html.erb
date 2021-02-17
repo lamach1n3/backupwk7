@@ -1,0 +1,420 @@
+
+
+    <!-- BUTTON CALLOUT -->
+			
+			<a href="#" class="btn btn-xlg btn-primary fs-20 fullwidth m-0 rad-0 p-40">
+				<span class="font-lato fs-30">
+					Time for you to get your Quote.  </br>  
+					<strong>Pick your type of building to start.</strong>
+				</span>
+			</a>
+    
+    <form id="myForm" action="" method="post"><input type="hidden" value="" />
+        <div class="text-center " id="building-type">
+            <div class="m-10">
+                <div class="select-rm" mix-filter>
+                
+                   <input type="button" data-filter="filterRes" class="btn btn-danger build-type filter" id="residential" value="RESIDENTIAL"
+                        name="building-type" onclick="SelectResidential()">
+                    <input type="button" data-filter="filterCom" class="btn btn-danger build-type filter" id="Commercial" value="COMMERCIAL"
+                        name="building-type" onclick= "SelectCommercial()">
+                    <input type="button"  data-filter="filterCorp" class="btn btn-danger build-type filter" id="corporate" value="CORPORATE"
+                        name="building-type" onclick= "SelectCorporate()">
+                    <input type="button" data-filter="filterHyb" class="btn btn-danger build-type filter" id="hybrid" value="HYBRID"
+                        name="building-type" onclick= "SelectHybrid()">
+                </div>
+            </div>
+        </div>
+    
+    	<div class="row mix-grid" id="mySelect" style="display:none">
+			<!-- Residential inputs form-->
+    	    <div class="mix filterRes" >
+
+    	            <div id="number-of-apartments">
+    	                Enter the number of apartment <br> 
+    	                <input id="number_of_apartments1" type="number" value="" onchange="changeValue()" min="1">
+    	            </div>
+	
+    	            <div id="number-of-floors">
+    	                Enter the number of floors <br>
+    	                <input id="number_of_floors1" type="number" value="" onchange="changeValue()" min="1" >
+    	            </div>
+	
+    	            <div id="number-of-basements">
+    	                Enter the number of basements <br>
+    	                <input id="number_of_basements1" type="number" value="" onchange="changeValue()" min="0">
+    	            </div>
+    	    </div>
+
+			<!-- commercial inputs form-->
+    	    <div class="mix filterCom" >
+
+    	        <div id="number-of-companies">
+    	            Enter the number of distinct business <br>    
+    	            <input id="number_of_companies2" type="number" value="" onchange="changeValue()" min="1">
+    	        </div>
+
+    	        <div id="number-of-floors">
+    	            Enter the number of floors <br>
+    	            <input id="number_of_floors2" type="number" value="" onchange="changeValue()" min="1">
+    	        </div>
+	
+    	        <div  id="number-of-basements">
+    	            Enter the number of basements <br>
+    	            <input id="number_of_basements2" type="number" value="" onchange="changeValue()" min="0">
+    	        </div>
+
+    	        <div id="number-of-parking-spots">
+    	            Enter the number of parking spaces <br>
+    	            <input  id="number_of_parking_spots2" type="number" value="" onchange="changeValue()" min="1">
+    	        </div>
+
+    	        <div id="number-of-elevators">
+    	            Enter the number of elevator cages to be deployed<br>
+    	            <input id="number_of_elevators2" type="number" value="" onchange="changeValue()" min="1">
+    	        </div>
+
+    	    </div>
+
+			<!-- corporate inputs form-->
+    	    <div class="mix filterCorp" >
+
+    	        <div id="number-of-parking-spots"> 
+    	        	Enter the number of parking spaces <br>
+    	        	<input id="number_of_parking_spots3" type="number" value="" onchange="changeValue()" min="0">
+    	        </div>
+
+    	        <div id="number-of-floors">           
+    	       		Enter the number of floors <br>  
+    	            <input id="number_of_floors3" type="number" value="" onchange="changeValue()"  min= "1">
+    	        </div>
+	
+    	        <div id="number-of-basements">
+    	        	Enter the number of basements <br>
+    	            <input id="number_of_basements3" type="number" value="" onchange="changeValue()" min="0">
+    	        </div>
+
+    	        <div id="maximum-occupancy">
+    	        	Enter the number of occupant per floor<br>
+    	            <input id="maximum_occupancy3" type="number" value="" onchange="changeValue()" min="1">
+    	        </div>
+
+    	        <div id="number-of-companies">         
+    	       		 Enter the number of distinct business <br>          
+    	            <input id="number_of_companies3" type="number" value="" onchange="changeValue()" min="1">
+    	        </div>
+
+    	    </div>
+			<!-- hybrid inputs form-->
+    		<div class="mix filterHyb" >
+    		    <div id="number-of-parking-spots">
+    		    	Enter the number of parking spaces <br>
+    		    	<input id="number_of_parking_spots4" type="number" value="" onchange="changeValue()" min="1">
+    		    </div>
+
+    		    <div id="number-of-floors">
+    		        Enter the number of floors <br>
+    		        <input id="number_of_floors4" type="number" value="" onchange="changeValue()" min="1">
+    		    </div>
+
+    		    <div id="number-of-basements">
+    		        Enter the number of basements <br>
+    		        <input id="number_of_basements4" type="number" value="" onchange="changeValue()" min="0">
+    		    </div>
+
+    		    <div id="maximum-occupancy">
+    		        Enter the number of occupant per floor<br>
+    		        <input id="maximum_occupancy4" type="number" value="" onchange= "changeValue()" min="1">
+    		    </div>
+
+    		    <div id="number-of-companies">
+    		        Enter the number of distinct business <br>
+    		        <input id="number_of_companies4" type="number" value="" onchange="changeValue()" min="1">
+    		    </div>
+
+    		    <div id="number-of-elevators">
+    		        Enter the number of elevator cages to be deployed<br>
+    		        <input id="number_of_elevators4" type="number" value="" onchange="changeValue()" min="1">
+    		    </div>
+
+    		    <div id ="business-hours">
+    		        Enter the number of hours of activity<br>
+    		        <input id="business_hours4" type="number" value="" onchange="changeValue()" min="1" max"24">
+    		    </div>
+    		</div>   
+
+			<!--Radio buttons with type of installation standard premium or excelium-->
+    	    <div class="alternate pt-30">
+    	        <div class="container text-center ">
+    	            <div class="row">
+    	                <div class="col-4 radio-hide" id="standard">
+    	                    <div>
+	
+    	                        <label class="mb-20"><p style="font-size: 22px;">Standard</p>
+    	                            <input id="radioStandard" class="radio-price ml-8" type="radio" name="price"
+    	                                value="Standard" onchange="changeValue()" checked></label>
+    	                        <p style="font-size: 18px;">Price per unit is: $7 565<br>Installation fee is: 10%
+    	                        </p>
+	
+    	                    </div>
+    	                </div>
+	
+	
+    	                <div class="col-4 radio-hide" id="premium">
+    	                    <div>
+    	                        <label class="mb-20"><p style="font-size: 22px;">Premium</p>
+    	                            <input id="radioPremium" class="radio-price ml-8" type="radio" name="price"
+    	                                value="Premium" onchange="changeValue()"></label>
+    	                        <p style="font-size: 18px;">Price per unit is: $12 345 <br> Installation fee is: 13%
+    	                        </p>
+    	                    </div>
+    	                </div>
+	
+    	                <div class="col-4 radio-hide " id="excelium">
+    	                    <div>
+    	                        <label class="mb-20"><p style="font-size: 22px;">Excelium</p>
+    	                            <input id="radioExcelium" class="radio-price ml-8" type="radio" name="price"
+    	                                value="Excelium" onchange="changeValue()"></label>
+    	                        <p style="font-size: 18px;">Price per unit is: $15 400<br>Installation fee is: 16%
+    	                        </p>
+    	                    </div>
+    	                </div>
+    	            </div>
+    	        </div>
+    	    </div>
+
+			<!--Return values to the customer of quotes-->
+			<div class="text-center mt-30 ">
+    	        <h3>Our suggestion and price</h3>
+
+    	        <br>The amount of elevators needed__: <input id="elevatorResult" type="number" name="" value="" disabled>
+    	        <br>The unit price of each elevator____: <input id="PriceUnit" type="text" disabled>
+				<br>The total price of the elevators____: <input id="PriceTotalUnit" type="text" disabled>
+    	        <br>The installation fees_______________: <input id="InstallationCost" type="text" disabled>
+    	        <br>Total cost__________________________: <input id="TotalCost" type="text" disabled>
+    	    </div>
+			
+		</div>
+    </form>
+
+    <script>
+		var buildingType=0;
+		function SelectResidential(){ 
+			
+    		document.getElementById("mySelect").style.display="block";
+    		buildingType = 1;
+    	}
+
+		function SelectCommercial() {
+			document.getElementById("mySelect").style.display = "block";
+			buildingType = 2;
+			clear();
+    	}
+
+		function SelectCorporate() {
+			document.getElementById("mySelect").style.display = "block";
+			buildingType = 3;
+			clear();
+		}
+
+		function SelectHybrid() {
+			document.getElementById("mySelect").style.display = "block"; 
+			buildingType = 4;
+			clear();
+   		}
+
+    
+    	//Number of elevators calculations
+     
+     	function numberResidentialEl(){
+    
+       		var rNumEls = 0;
+       		var rNumApartments = document.getElementById("number_of_apartments1").value;
+       		var rNumFloors = document.getElementById("number_of_floors1").value;
+       		var rAvgDoors = Math.ceil(Math.ceil(rNumApartments/rNumFloors)/6);
+       		var rElColumns = Math.ceil(rNumFloors/20);
+       		rNumEls = rAvgDoors * rElColumns;
+
+       		return rNumEls;
+     	}
+
+     			//Number of commercial elevators
+        		function numberCommercialEl() {
+            	   	var cNumCages= document.getElementById("number_of_elevators2").value;
+            		return cNumCages;
+            	}
+
+       			 // number of corporate and hybrid elevators
+                function numberCorporateEl(){
+
+               		var coNumFloors = document.getElementById("number_of_floors3").value;                
+               		var coNumBasements = document.getElementById("number_of_basements3").value;               
+               		var coNumOccupants = document.getElementById("maximum_occupancy3").value;       
+               		var totFloors = parseInt(coNumFloors) + parseInt(coNumBasements)
+               		var totOccupant1 = coNumOccupants * totFloors;
+               		var coNumEls = Math.ceil(totOccupant1 / 1000);
+               		var coElsColumns = Math.ceil((coNumFloors+coNumBasements) / 20);
+               		var coElsPerColumn = coNumEls / coElsColumns;
+               		var totElsco = coElsPerColumn * coElsColumns;
+	
+               		return coNumEls;
+				}
+
+         		function numberHybridEl() {
+         		    var hNumFloors = document.getElementById("number_of_floors4").value;
+         		    var hNumBasements = document.getElementById("number_of_basements4").value;
+         		    var hNumOccupants = document.getElementById("maximum_occupancy4").value;
+         		    var totFloors1 = parseInt(hNumFloors) + parseInt(hNumBasements);
+
+         		    console.log(totFloors1);
+
+         		    var totOccupant = hNumOccupants * totFloors1;
+         		    var hNumEls = Math.ceil(totOccupant / 1000);
+         		    var hElsColumns = Math.ceil((hNumFloors + hNumBasements) / 20);
+         		    var hElsPerColumn = hNumEls / hElsColumns;
+         		    var totElsh = hElsPerColumn * hElsColumns;
+					var tobeat = column.math
+         		    return hNumEls;
+         		}
+
+
+        //calculate price
+    
+       
+    	function changeValue(){  
+		
+    	    var elevatorNeeded = 0;
+    	    if(buildingType == 1){
+    	        elevatorNeeded = numberResidentialEl();
+    	        document.getElementById("elevatorResult").value = elevatorNeeded;
+	
+    	    }
+    	    if(buildingType == 2){
+    	        elevatorNeeded = numberCommercialEl();
+    	        document.getElementById("elevatorResult").value = elevatorNeeded;
+	
+    	    }
+    	    if(buildingType == 3){
+    	        elevatorNeeded = numberCorporateEl();
+    	        document.getElementById("elevatorResult").value = elevatorNeeded;  
+	
+    	      }
+    	    if(buildingType == 4){
+    	        elevatorNeeded = numberHybridEl();
+    	        document.getElementById("elevatorResult").value = elevatorNeeded;
+	
+    	    }
+
+    	    var UP = 0.00;
+			var TotalElvPrice = 0.00;
+			var installP = 0.00;
+    	    var totalP = 0.00;
+    	    
+    	    
+			if(document.getElementById("radioStandard").checked){
+    	        UP=7565.00;
+				TotalElvPrice = (UP * elevatorNeeded);
+    	        installP = UP * elevatorNeeded * 0.1;
+    	        totalP = UP * elevatorNeeded + installP;
+			
+    	        document.getElementById("PriceUnit").value = new Intl.NumberFormat("en-US", {
+																		style: "currency",
+																		currency: "USD",
+																		}).format(UP);
+				document.getElementById("PriceTotalUnit").value = new Intl.NumberFormat("en-US", {
+																		style: "currency",
+																		currency: "USD",
+																		}).format(UP * elevatorNeeded);
+
+    	        document.getElementById("InstallationCost").value = new Intl.NumberFormat("en-US", {
+																		style: "currency",
+																		currency: "USD",
+																		}).format(installP);
+
+    	        document.getElementById("TotalCost").value = new Intl.NumberFormat("en-US", {
+																	style: "currency",
+																	currency: "USD",
+																	}).format(totalP);
+    	    }
+
+    	      if (document.getElementById("radioPremium").checked) {
+    	        UP =12345.00;
+				TotalElvPrice = UP * elevatorNeeded;
+    	        installP = UP * elevatorNeeded * 0.13;
+    	        totalP = UP * elevatorNeeded + installP;
+
+    	        document.getElementById("PriceUnit").value = new Intl.NumberFormat("en-US", {
+																		style: "currency",
+																		currency: "USD",
+																		}).format(UP);
+				document.getElementById("PriceTotalUnit").value = new Intl.NumberFormat("en-US", {
+																		style: "currency",
+																		currency: "USD",
+																		}).format(UP * elevatorNeeded);
+    	        document.getElementById("InstallationCost").value = new Intl.NumberFormat("en-US", {
+																		style: "currency",
+																		currency: "USD",
+																		}).format(installP);
+    	        document.getElementById("TotalCost").value = new Intl.NumberFormat("en-US", {
+																	style: "currency",
+																	currency: "USD",
+																	}).format(totalP);
+    	    }
+
+    	      if (document.getElementById("radioExcelium").checked) {
+    	        UP = 15400.00;
+				TotalElvPrice = UP * elevatorNeeded;
+    	        installP = UP * elevatorNeeded * 0.16;
+    	        totalP = UP * elevatorNeeded + installP;
+
+    	        document.getElementById("PriceUnit").value = new Intl.NumberFormat("en-US", {
+																		style: "currency",
+																		currency: "USD",
+																		}).format(UP);
+				document.getElementById("PriceTotalUnit").value = new Intl.NumberFormat("en-US", {
+																		style: "currency",
+																		currency: "USD",
+																		}).format(UP * elevatorNeeded);
+    	        document.getElementById("InstallationCost").value = new Intl.NumberFormat("en-US", {
+																		style: "currency",
+																		currency: "USD",
+																		}).format(installP);
+    	        document.getElementById("TotalCost").value = new Intl.NumberFormat("en-US", {
+																	style: "currency",
+																	currency: "USD",
+																	}).format(totalP);
+    	    }
+
+    	}    
+		/* to reset the form */
+    	function clear(){
+    	    document.getElementById("myForm").reset
+    	}
+    </script>
+			<a href="index.html#contact" class="btn btn-xlg btn-primary fs-20 fullwidth m-0 rad-0 p-40">
+				<span class="font-lato fs-30">
+					Satisfied by your Quote ? Get in touch with one of customers service Agent.  </br>  
+					<strong>Contact us &raquo;</strong>
+				</span>
+			</a>
+
+</div>
+
+
+
+<!-- SCROLL TO TOP -->
+<a title="Scroll to top" href="#top" id="toTop"></a>
+
+
+<!-- PRELOADER -->
+<div id="preloader">
+    <div class="inner">
+        <span class="loader"></span>
+    </div>
+</div><!-- /PRELOADER -->
+
+
+</body>
+
+</html>
+   

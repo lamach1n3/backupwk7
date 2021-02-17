@@ -61,7 +61,17 @@ rake routes
 ```
 ![](routes.png)
 
-
+## Admin log-in instructions:
+```
+1. Sign up as a new user
+2. CD in the project directory with your CLI
+3. Type in `rails c`
+4. Type in `@user = User.first`
+5. Type in `@user.admin = true`
+6. Type in `@user.save`
+7. Go back to your localhost:3000
+8. You should now have a Employees section link. You can also add /admin to the address. Will only work for admins.
+```
 
 
 
