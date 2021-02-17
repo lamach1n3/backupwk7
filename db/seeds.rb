@@ -16,14 +16,6 @@ Employee.create(first_name:"David", last_name:"Boutin", function:"Engineer", pho
 Employee.create(first_name:"Mathieu", last_name:"Lortie", function:"Engineer", phone:"roc-kets", email:"mathieu.lortiet@codeboxx.biz" )
 Employee.create(first_name:"Thomas", last_name:"Carrier", function:"Engineer", phone:"roc-kets", email:"thomas.carriert@codeboxx.biz" )
 
-# Patate.create(poids:20, sorte:"yukonGold", pays:"mexico")
-# Patate.create(poids:30, sorte:"yukonGold", pays:"mexico")
-# Patate.create(poids:40, sorte:"yukonGold", pays:"mexico")
-# Patate.create(poids:50, sorte:"yukonGold", pays:"mexico")
-
-
-
-
 
 # def employee
 #     nicolas = ['nicolas.genest@codeboxx.biz','nicolas','Genest','Nicolas','CEO']
