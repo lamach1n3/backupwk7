@@ -4,3 +4,4 @@ class PagesController < ApplicationController
     def quotes
     end
 end
+
