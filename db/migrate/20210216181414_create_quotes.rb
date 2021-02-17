@@ -12,7 +12,7 @@ class CreateQuotes < ActiveRecord::Migration[5.2]
       t.integer :maximum_occupancy
       t.integer :business_hours
       t.string :company_name
-      t.text :product_line
+      t.string :product_line
       t.decimal :install_fees
       t.decimal :total_price
       t.decimal :unit_price
