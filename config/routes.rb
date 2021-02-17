@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # get '/diagram'      => 'pages#diagram'
 
   # post '/leads'       => 'leads#create'
-  # post "/quotes"      => "quotes#create"
+  post "/quotes"      => "quotes#create"
    
   devise_scope :user do 
     get "/login" => "devise/sessions#new" 

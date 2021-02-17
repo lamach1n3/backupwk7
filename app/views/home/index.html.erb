@@ -3,7 +3,7 @@
 
 <% if current_user %>
 <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-<% if current_user.admin || current_user.employee%>
+<% if current_user.admin %>
 <a href=<%= "admin" %>>Employees section</a>
 <% end %>
 <% else %>
