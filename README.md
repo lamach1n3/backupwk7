@@ -4,14 +4,14 @@ Application for website of the Company of Rocket Elevators
 <https://tailleferjf.cf/>
 ## Gems used
 * gem 'devise'
+* gem 'rails-admin'
 
-### pour la creation des tables dans mysql avec migration
-rails g migration CreateTableName
-pour leads, address, customers, buildings, buildingdetails, batteries, columns et elvator
+### pour la creation des tables dans mysql avec model
+rails g model TableName
+pour Quotes Employees Users
 
 ### pour les seeds
-faker a ete utiliser pour la creation de donnees fictive
-https://github.com/faker-ruby/faker#default
+
 ## Infos development:
 ### After pull:
 ```
@@ -21,7 +21,31 @@ rails db:create
 rails db:migrate
 rails db:seed ( if you want to populate your database )
 ```
+📚 Instructions to acces to the admin panel:
 
+To log as Admin:
+
+```sh
+1. Navigation bar : Member
+2. Login
+3. Username: mathieu.houde@codeboxx.biz
+   password: 123456
+4. Member : Admin Panel
+```
+
+## :memo: Routes
+
+- homepage: <b>/</b>
+- residential page: <b>/residential</b>
+- commercial page: <b>/commercial</b>
+- form page: <b>/form</b>
+- thank you page: <b>/thank-you</b>
+- Admin panel: <b>/admin</b>
+
+```sh
+rake routes
+```
+![](routes.png)
 
 
 
