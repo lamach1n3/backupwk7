@@ -5,13 +5,29 @@ Application for website of the Company of Rocket Elevators
 ## Gems used
 * gem 'devise'
 
-### pour la creation des tables dans mysql avec migration
-rails g migration CreateTableName
-pour leads, address, customers, buildings, buildingdetails, batteries, columns et elvator
+
+* gem 'rails-admin'
+
+
+* gem 'faker'
+
+
+* gem 'rubocop'
+      https://github.com/rubocop-hq/rubocop
+* gem 'sprockets-rails'
+      https://github.com/rails/sprockets-rails/
+* df
+* df
+* df
+* fd
+* 
+
+### pour la creation des tables dans mysql avec model
+rails g model TableName
+pour Quotes Employees Users
 
 ### pour les seeds
-faker a ete utiliser pour la creation de donnees fictive
-https://github.com/faker-ruby/faker#default
+
 ## Infos development:
 ### After pull:
 ```
@@ -21,9 +37,43 @@ rails db:create
 rails db:migrate
 rails db:seed ( if you want to populate your database )
 ```
+📚 Instructions to acces to the admin panel:
 
+To log as Admin:
 
+```sh
+1. Navigation bar : Member
+2. Login
+3. Username: mathieu.houde@codeboxx.biz
+   password: 123456
+4. Member : Admin Panel
+```
 
+## :memo: Routes
+
+- homepage: <b>/</b>
+- residential page: <b>/residential</b>
+- commercial page: <b>/commercial</b>
+- form page: <b>/form</b>
+- thank you page: <b>/thank-you</b>
+- Admin panel: <b>/admin</b>
+
+```sh
+rake routes
+```
+![](routes.png)
+
+## Admin log-in instructions:
+```
+1. Sign up as a new user
+2. CD in the project directory with your CLI
+3. Type in `rails c`
+4. Type in `@user = User.first`
+5. Type in `@user.admin = true`
+6. Type in `@user.save`
+7. Go back to your localhost:3000
+8. You should now have a Employees section link. You can also add /admin to the address. Will only work for admins.
+```
 
 
 

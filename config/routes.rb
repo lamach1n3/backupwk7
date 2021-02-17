@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/commercial'    => 'pages#commercial'
   get "/home"         => 'pages#index'
   get '/error'        => 'pages#error'
-  get '/quote'        =>  'pages#quote'
+  get '/quotes'        =>  'quotes#quotes'
   get '/residential'  => 'pages#residential'
   # get '/charts'       => 'pages#charts'
   # get '/diagram'      => 'pages#diagram'
