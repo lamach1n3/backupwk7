@@ -8,3 +8,4 @@ class PagesController < ApplicationController
 >>>>>>> master
     end
 end
+

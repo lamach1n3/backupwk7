@@ -3,4 +3,6 @@ class HomeController < ApplicationController
   end
   def quotes
   end
+  def commercial
+  end
 end
