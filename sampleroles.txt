@@ -17,4 +17,4 @@ q5 = Quote.create({ name: 'My Quote', building_type: 'residential', number_of_ap
 q6 = Quote.create({ name: 'My Quote', building_type: 'residential', number_of_apartments: '600', number_of_floors: '60', number_of_basements: '5', user_id: u5.id})
 
 
-   add_reference :users, :employee
+   add_reference :employess, :user
