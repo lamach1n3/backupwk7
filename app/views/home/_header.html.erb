@@ -54,26 +54,34 @@
 										</a>
 									</li>
 									<li>
+									<a>
 										<% if current_user %>
 										<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 										<% end %>
+									</a>
 									</li>
 									<li>
+									<a>
 										<% if !current_user %>
 										<%= link_to 'Sign up', "/signup" %>
 										<% end %>
+									</a>
 									</li>
 									<li>
+									<a>
 										<% if !current_user %>
 										<%= link_to 'Sign in', "/signin" %>
 										<% end %>
+									</a>
 									</li>
 									<li>
+									<a>
 										<% if current_user%>
 											<% if current_user.admin%>
-											<a href=<%= "admin" %>>Employees section</a>
+											<a href=<%= "admin" %>>Admin</a>
 											<% end %>
 										<% end %>
+									</a>
 									</li>
 								</ul>
 							</nav>
