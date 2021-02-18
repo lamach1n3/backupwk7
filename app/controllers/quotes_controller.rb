@@ -25,4 +25,3 @@ class QuotesController < ApplicationController
       params.require(:quote).permit(:company_name)
     end
 end
-
