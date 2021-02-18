@@ -168,3 +168,5 @@ Employee.create(first_name:"Thomas", last_name:"Carrier", function:"Engineer", p
 # Employee.create!(firstName: 'David', lastName: 'Boutin', title: "Engineer", users_id: 5)
 # Employee.create!(firstName: 'Mathieu', lastName: 'Lortie', title: "Engineer", users_id: 6)
 # Employee.create!(firstName: 'Thomas', lastName: 'Carrier', title: "Engineer", users_id: 7)
+
+# rails g migration addUserRefToEmployees user:references
