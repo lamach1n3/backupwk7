@@ -55,7 +55,7 @@ const $finalPrice = $("#final-price>input");
 /////
 function find_type() {
      
-    if ($('#standard_input').prop("checked")) {
+    if ($('#quote_product_line_standard').prop("checked")) {
         resultsFeild.show();
         $unitPrice.val(currency(7565, {pattern: `# !`}).format());
         t_e_p = totalElevator * 7565
@@ -64,7 +64,7 @@ function find_type() {
         $installationFees.val(currency(i_f, {pattern: `# !`}).format());
         $finalPrice.val(currency(i_f + t_e_p, {pattern: `# !`}).format())
 
-    } else if ($('#premium_input').prop("checked")) {
+    } else if ($('#quote_product_line_premium').prop("checked")) {
         resultsFeild.show();
         $unitPrice.val(currency(12345, {pattern: `# !`}).format());
         t_e_p = totalElevator * 12345
@@ -73,7 +73,7 @@ function find_type() {
         $installationFees.val(currency(i_f, {pattern: `# !`}).format())
         $finalPrice.val(currency(i_f + t_e_p, {pattern: `# !`}).format())
 
-    } else if ($('#excelium_input').prop("checked")) {
+    } else if ($('#quote_product_line_excelium').prop("checked")) {
         resultsFeild.show();
         $unitPrice.val(currency(15400, {pattern: `# !`}).format());
         t_e_p = totalElevator * 15400
@@ -128,7 +128,7 @@ $(() => {
     });
 //////////////////////////
     // when document ready => do function
-    $("#building-type").change(function () {
+    $("#quote_building_type").change(function () {
 
         resetField();
         resultsFeild .hide();
@@ -136,7 +136,7 @@ $(() => {
         $("#premium_input").checked = false;
         $("#excelium_input").checked = false;
      
-        type = $("#building-type").val();
+        type = $('#quote_building_type :selected').val();
 
         // assigning #building-type value to type
         if (type === "residential") {

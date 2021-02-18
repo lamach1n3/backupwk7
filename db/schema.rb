@@ -34,12 +34,14 @@ ActiveRecord::Schema.define(version: 2021_02_18_150258) do
     t.integer "number_of_elevators"
     t.integer "maximum_occupancy"
     t.integer "business_hours"
+    t.integer "elevator_amount"
     t.string "company_name"
     t.string "product_line"
-    t.decimal "install_fees", precision: 10
-    t.decimal "total_price", precision: 10
-    t.decimal "unit_price", precision: 10
+    t.string "install_fees"
+    t.string "total_price"
+    t.string "unit_price"
     t.string "building_type"
+    t.string "final_price"
     t.timestamp "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
