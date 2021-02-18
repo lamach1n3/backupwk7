@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
     def commercial
     end
-    def quotes
+
+    def residential 
     end
+
 end
+

@@ -12,9 +12,15 @@ Application for website of the Company of Rocket Elevators
 * gem 'faker'
 
 
-* dfd
-* df
-* df
+* gem 'rubocop'
+      https://github.com/rubocop-hq/rubocop
+* gem 'sprockets-rails'
+      https://github.com/rails/sprockets-rails/
+* gem 'hirb'
+      http://tagaholic.me/hirb/doc/index.html
+      to use open -  
+                  -open rails console in terminal
+                  -run : Hirb.enable ( everytime you open the console)
 * df
 * df
 * fd

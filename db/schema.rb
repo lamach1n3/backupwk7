@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2021_02_16_181414) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -33,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_02_16_181414) do
     t.integer "maximum_occupancy"
     t.integer "business_hours"
     t.string "company_name"
-    t.text "product_line"
+    t.string "product_line"
     t.decimal "install_fees", precision: 10
     t.decimal "total_price", precision: 10
     t.decimal "unit_price", precision: 10
