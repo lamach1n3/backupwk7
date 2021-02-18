@@ -10,7 +10,7 @@
 						</button>
 
 						<!-- Logo -->
-						<a class="logo float-left scrollTo" href="index#top">
+						<a class="logo float-left scrollTo" href="index">
 							<img src="/assets/RE/re_logo.png" alt="" />
 						</a>
 
@@ -55,22 +55,8 @@
 									</li>
 									<li>
 									<a>
-										<% if current_user %>
-										<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-										<% end %>
-									</a>
-									</li>
-									<li>
-									<a>
 										<% if !current_user %>
-										<%= link_to 'Sign up', "/signup" %>
-										<% end %>
-									</a>
-									</li>
-									<li>
-									<a>
-										<% if !current_user %>
-										<%= link_to 'Sign in', "/signin" %>
+										<a href=<%= "signin" %>>LOG IN</a>
 										<% end %>
 									</a>
 									</li>
@@ -78,8 +64,15 @@
 									<a>
 										<% if current_user%>
 											<% if current_user.admin%>
-											<a href=<%= "admin" %>>Admin</a>
+											<a href=<%= "admin" %>>ADMIN</a>
 											<% end %>
+										<% end %>
+									</a>
+									</li>
+									<li>
+									<a>
+										<% if current_user %>
+										<%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %>
 										<% end %>
 									</a>
 									</li>
