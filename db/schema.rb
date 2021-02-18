@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_02_18_150258) do
     t.integer "number_of_floors"
     t.integer "number_of_basements"
     t.integer "number_of_companies"
+    t.integer "number_of_corporations"
     t.integer "number_of_parking"
     t.integer "number_of_elevators"
     t.integer "maximum_occupancy"
