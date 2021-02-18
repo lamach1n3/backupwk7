@@ -23,7 +23,7 @@ gem 'rails_admin'
 gem 'faker'
 gem 'rubocop', require: false
 gem 'sprockets-rails', :require => 'sprockets/railtie'
-
+gem 'hirb'
 # ===============================================================
 # ===============================================================
 
