@@ -1,14 +1,4 @@
 
-<% if current_user %>
-<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-<% if current_user.admin%>
-<a href=<%= "admin" %>>Employees section</a>
-<% end %>
-<% else %>
-<%= link_to 'Sign up', new_user_registration_path %>
-<%= link_to 'Sign in', new_user_session_path %>
-<% end %>
-
 	<!-- REVOLUTION SLIDER -->
 			<div class="slider fullwidthbanner-container roundedcorners">
 				<div class="fullwidthbanner" data-height="600" data-shadow="0" data-navigationStyle="preview2">
