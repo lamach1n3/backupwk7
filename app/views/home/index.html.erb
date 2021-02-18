@@ -3,6 +3,16 @@
 			<div class="slider fullwidthbanner-container roundedcorners">
 				<div class="fullwidthbanner" data-height="600" data-shadow="0" data-navigationStyle="preview2">
 					<ul class="hide">
+
+						<% if current_user %>
+						<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+						<% if current_user.admin%>
+						<a href=<%= "admin" %>>Employees section</a>
+						<% end %>
+						<% else %>
+						<%= link_to 'Sign up', "/signup" %>
+						<%= link_to 'Sign in', "/signin" %>
+						<% end %>
 			
 						<!-- SLIDE  -->
 						<li data-transition="parallaxtobottom" data-slotamount="7" data-masterspeed="300" data-saveperformance="off"
@@ -41,7 +51,7 @@
 								data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1"
 								data-endelementdelay="0.1" data-endspeed="500"
 								style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">
-								<a class="btn btn-default btn-lg" href="quote.html">GET A QUOTE &nbsp; <i
+								<a class="btn btn-default btn-lg" href="quotes.html">GET A QUOTE &nbsp; <i
 										class="fa fa-angle-right"></i></a>
 							</div>
 						</li>
@@ -180,7 +190,7 @@
 
 					<div class="text-center">
 						<h2 class="fs-40 fw-300">Design &amp; Elevate Since 1976</h2>
-						<a class="btn btn-default btn-lg" href="quote.html">GET A QUOTE <i class="fa fa-angle-right"></i></a> 
+						<a class="btn btn-default btn-lg" href="quotes.html">GET A QUOTE <i class="fa fa-angle-right"></i></a> 
 						&nbsp; OR &nbsp; 
 						<a class="btn btn-primary btn-lg scrollTo" href="#services">OUR SERVICES <i class="fa fa-angle-right"></i></a>
 					</div>
