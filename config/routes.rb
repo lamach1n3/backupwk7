@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'home/index'
+  get 'page/residential'
+  get 'page/commercial'
+  get 'page/404'
+  get 'quotes/quotes'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "home#index"
   
   get '/commercial'    => 'pages#commercial'
   get "/home"         => 'pages#index'
-  get '/error'        => 'pages#error'
+  get '/error'        => 'pages#404'
   get '/quotes'        =>  'quotes#quotes'
   get '/residential'  => 'pages#residential'
   # get '/charts'       => 'pages#charts'
