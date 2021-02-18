@@ -53,8 +53,29 @@
 											CONTACT
 										</a>
 									</li>
+									<li>
+										<% if current_user %>
+										<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+										<% end %>
+									</li>
+									<li>
+										<% if !current_user %>
+										<%= link_to 'Sign up', "/signup" %>
+										<% end %>
+									</li>
+									<li>
+										<% if !current_user %>
+										<%= link_to 'Sign in', "/signin" %>
+										<% end %>
+									</li>
+									<li>
+										<% if current_user%>
+											<% if current_user.admin%>
+											<a href=<%= "admin" %>>Employees section</a>
+											<% end %>
+										<% end %>
+									</li>
 								</ul>
-
 							</nav>
 						</div>
 
