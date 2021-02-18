@@ -105,3 +105,10 @@
         <input class="form-control" type="" readonly>
     </div>
 </div>
+
+<%= form_for(Quote.new) do |f| %> 
+    <%= f.label :company_name %>
+    <%= f.text_field :company_name %>
+
+    <%= f.submit "send quote", class: "btn btn-default"%> 
+<% end %>
