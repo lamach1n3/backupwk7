@@ -5,6 +5,7 @@ class CreateQuotes < ActiveRecord::Migration[5.2]
       t.integer :number_of_floors
       t.integer :number_of_basements
       t.integer :number_of_companies
+      t.integer :number_of_corporations
       t.integer :number_of_floors
       t.integer :number_of_basements
       t.integer :number_of_parking

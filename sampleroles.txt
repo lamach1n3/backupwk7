@@ -18,3 +18,9 @@ q6 = Quote.create({ name: 'My Quote', building_type: 'residential', number_of_ap
 
 
    add_reference :employess, :user
+
+
+
+   master clean
+   public repo during the deployment
+   cap production deploy
