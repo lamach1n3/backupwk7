@@ -1,66 +1,3 @@
-<%= form_for(Quote.new) do |f| %> 
-  	<%= f.label :company_name %>
-   	<%= f.text_field :company_name %>
-
-    <%= f.submit "send quote", class: "btn btn-default"%> 
-<% end %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<%# 
-
-    <!-- BUTTON CALLOUT -->
-			
-			<a href="#" class="btn btn-xlg btn-primary fs-20 fullwidth m-0 rad-0 p-40">
-				<span class="font-lato fs-30">
-					Time for you to get your Quote.  </br>  
-					<strong>Pick your type of building to start.</strong>
-				</span>
-			</a>
-    
-    <form id="myForm" action="" method="post"><input type="hidden" value="" />
-        <div class="text-center " id="building-type">
-            <div class="m-10">
-                <div class="select-rm" mix-filter>
-                
-                   <input type="button" data-filter="filterRes" class="btn btn-danger build-type filter" id="residential" value="RESIDENTIAL"
-                        name="building-type" onclick="SelectResidential()">
-                    <input type="button" data-filter="filterCom" class="btn btn-danger build-type filter" id="Commercial" value="COMMERCIAL"
-                        name="building-type" onclick= "SelectCommercial()">
-                    <input type="button"  data-filter="filterCorp" class="btn btn-danger build-type filter" id="corporate" value="CORPORATE"
-                        name="building-type" onclick= "SelectCorporate()">
-                    <input type="button" data-filter="filterHyb" class="btn btn-danger build-type filter" id="hybrid" value="HYBRID"
-                        name="building-type" onclick= "SelectHybrid()">
-=======
 <section id="quote-form">
 <div class="container">
     <div class="heading-title heading-dotted text-center">
@@ -116,7 +53,6 @@
                 <div id="business-hours" class="col-md-4" style="display: none;">
                     <label>HOURS OF ACTIVITY</label>
                     <input required type="number" class="form-control" min="0" max="24">
->>>>>>> master
                 </div>
             </div>
         </div>
@@ -164,18 +100,15 @@
         <label>INSTALLATION</label>
         <input class="form-control" type="text" readonly>
     </div>
-<<<<<<< HEAD
-</div><!-- /PRELOADER -->
-
-
-</body>
-
-</html>
-    %>
-=======
     <div id="final-price" class="col-md-4" style="display:none">
         <label>FINAL PRICE</label>
         <input class="form-control" type="" readonly>
     </div>
 </div>
->>>>>>> master
+
+    <%= form_for(Quote.new) do |f| %> 
+    	<%= f.label :company_name %>
+    	<%= f.text_field :company_name %>
+
+        <%= f.submit "send quote", class: "btn btn-default"%> 
+    <% end %>
