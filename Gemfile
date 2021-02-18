@@ -24,6 +24,11 @@ gem 'faker'
 gem 'rubocop', require: false
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 
+gem 'hirb'
+# ===============================================================
+# ===============================================================
+
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

@@ -8,8 +8,6 @@ class CreateEmployees < ActiveRecord::Migration[5.2]
       t.string :email
       t.datetime :created_at
       t.datetime :updated_at
-      t.bigint :user_id
-
       t.timestamps
     end
   end
