@@ -37,12 +37,12 @@ Employee.create(first_name:"Thomas", last_name:"Carrier", function:"Engineer", p
     # end
 
 
-thomas = Employee.last
-puts(thomas)
-thomas.build_user({email: thomas.email, password: '123456', password_confirmation: '123456', employee_id:})
-puts(thomas.user)
-thomas.save
-# puts("saved")
+# thomas = Employee.last
+# puts(thomas)
+# thomas.build_user({email: thomas.email, password: '123456', password_confirmation: '123456', employee_id:})
+# puts(thomas.user)
+# thomas.save
+# # puts("saved")
 # puts(User.all)
 # , employee_id: Employee.id
 # thomas = Employee.last
@@ -125,27 +125,27 @@ thomas.save
 # puts(pl.sample)
 # puts(pl.sample)
 
-100.times do
-    # dateCreationUpdate = Faker::Date.between(from: '2017-09-23', to: '2020-09-25')
-Quote.create(
-            install_fees: Faker::Number.between(from: 500, to: 2000),
-            total_price: Faker::Number.between(from: 50000, to: 200000),
-            # product_line: Faker::Number.between(from: 1, to: 3),
-            number_of_apartments: Faker::Number.between(from: 50, to: 200),
-            number_of_floors: Faker::Number.between(from: 10, to: 70),
-            number_of_basements: Faker::Number.between(from: 1, to: 10),
-            number_of_companies: Faker::Number.between(from: 1, to: 5),
-            number_of_parking: Faker::Number.between(from: 50, to: 200),
-            maximum_occupancy: Faker::Number.between(from: 50, to: 200),
-            business_hours: Faker::Number.between(from: 0, to: 24),
-            number_of_elevators: Faker::Number.between(from: 1, to: 15),
-            unit_price: Faker::Number.between(from: 11000, to: 15000),
-            # priceElevator: Faker::Number.between(from: 100000, to: 200000),
-            # updated_at: dateCreationUpdate,
-            # created_at:dateCreationUpdate
-    )
-end
-# Quote.create(install_fees:23, total_price:3434, number_of_apartments:3424, number_of_floors:2312, number_of_basements:67, number_of_companies:32423)
+# 100.times do
+#     # dateCreationUpdate = Faker::Date.between(from: '2017-09-23', to: '2020-09-25')
+# Quote.create(
+#             install_fees: Faker::Number.between(from: 500, to: 2000),
+#             total_price: Faker::Number.between(from: 50000, to: 200000),
+#             # product_line: Faker::Number.between(from: 1, to: 3),
+#             number_of_apartments: Faker::Number.between(from: 50, to: 200),
+#             number_of_floors: Faker::Number.between(from: 10, to: 70),
+#             number_of_basements: Faker::Number.between(from: 1, to: 10),
+#             number_of_companies: Faker::Number.between(from: 1, to: 5),
+#             number_of_parking: Faker::Number.between(from: 50, to: 200),
+#             maximum_occupancy: Faker::Number.between(from: 50, to: 200),
+#             business_hours: Faker::Number.between(from: 0, to: 24),
+#             number_of_elevators: Faker::Number.between(from: 1, to: 15),
+#             unit_price: Faker::Number.between(from: 11000, to: 15000),
+#             # priceElevator: Faker::Number.between(from: 100000, to: 200000),
+#             # updated_at: dateCreationUpdate,
+#             # created_at:dateCreationUpdate
+#     )
+# end
+# # Quote.create(install_fees:23, total_price:3434, number_of_apartments:3424, number_of_floors:2312, number_of_basements:67, number_of_companies:32423)
 
 
 # product_line: Random.between(standard, Premium, Excelium ),
