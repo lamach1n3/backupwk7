@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   
   get '/commercial'    => 'pages#commercial'
   get "/home"         => 'home#index'
-  get '/error'        => 'pages#404'
+  get '/404'        => 'pages#404'
   get '/quotes'        =>  'quotes#quotes'
   get '/residential'  => 'pages#residential'
   # get '/charts'       => 'pages#charts'
@@ -22,11 +22,12 @@ Rails.application.routes.draw do
   get '/portfolio'  => 'home#portfolio'
   # post '/leads'       => 'leads#create'
   post "/quotes"      => "quotes#create"
-
+  
    
   devise_scope :user do 
     get "/signup" => "devise/registrations#new" 
     get "/signin" => "devise/sessions#new" 
+    get "/signout" => "devise/sessions#destroy"
   end
 
   Rails.application.routes.draw do
