@@ -26,6 +26,7 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 # gem 'rails_admin_charts'
 
 gem 'hirb'
+gem 'cancancan'
 # ===============================================================
 # ===============================================================
 

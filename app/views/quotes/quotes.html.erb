@@ -95,8 +95,25 @@
         <%= f.text_field :final_price, :readonly => true %>
     </div>
     </br>
+    
+    <div id="quote_company_name" class="col-md-4" >
+                <%= f.label :"Company name" %>
+                <%= f.text_field :quotes_company_name %>
+    </div>
+    </br>
+    <div id="quotes_email" class="col-md-4" >
+                <%= f.label :Email %>
+                <%= f.email_field :quotes_email %>
+    </div>
+    </br>
+    <div id="quotes_name" class="col-md-4" >
+                <%= f.label :Name %>
+                <%= f.text_field :quotes_name %>
+    </div>
+    </br>
     <div>
     <%= submit_tag "Send Quote" %>
     </div>
+    </br>
 </div>
 <% end %>
