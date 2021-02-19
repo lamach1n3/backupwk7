@@ -111,8 +111,10 @@ function corpCalc() {
         let occ = parseInt($maximum.val());
 
         let totalOccupant = floor * occ;
-           totalElevator = Math.ceil(totalOccupant / 1000);
+        totalElevator = Math.ceil(totalOccupant / 1000);
         let column = Math.ceil((floor + base) / 20);
+        let elevatorPerColumn = Math.ceil(totalElevator / column);
+        totalElevator = elevatorPerColumn * column;
 
         $elevatorResults.val(totalElevator);
     });
@@ -165,3 +167,10 @@ $(() => {
     });
 });
 
+function calculateCorporateHybridEquipment(){
+    var totalOccupancy = quote.maximumOccupancy * quote.numberOfFloors;
+    var numberOfElevators = Math.ceil(totalOccupancy / 1000);
+    var numberOfColumns = Math.ceil((parseInt(quote.numberOfFloors) + parseInt(quote.numberOfBasements)) / 20);
+    var numberOfElevatorsPerColumn = Math.ceil(numberOfElevators / numberOfColumns);
+    quote.numberOfElevatorsRequired = numberOfElevatorsPerColumn * numberOfColumns;
+}
