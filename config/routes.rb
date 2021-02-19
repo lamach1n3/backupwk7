@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   
   get '/commercial'    => 'pages#commercial'
   get "/home"         => 'home#index'
-  get '/error'        => 'pages#404'
+  get '/404'        => 'pages#404'
   get '/quotes'        =>  'quotes#quotes'
   get '/residential'  => 'pages#residential'
   # get '/charts'       => 'pages#charts'
