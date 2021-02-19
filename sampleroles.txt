@@ -105,3 +105,7 @@ production:
         <%= f.text_field :quotes_company_name %>
     </div>
 </div>
+
+feed 404 when wrong address
+if route redirect to 404
+news mcourier 

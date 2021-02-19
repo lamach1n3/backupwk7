@@ -1,7 +1,7 @@
 # Rocket_Elevators_Information_System
 Application for website of the Company of Rocket Elevators
 ## URL
-<https://tailleferjf.cf/>
+<https://rocketmax.xyz/>
 ## Gems used
 * gem 'devise'
 

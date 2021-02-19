@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 2021_02_18_150258) do
     t.integer "maximum_occupancy"
     t.integer "business_hours"
     t.integer "elevator_amount"
-    t.string "company_name"
     t.string "product_line"
     t.string "quotes_name"
     t.string "quotes_email"

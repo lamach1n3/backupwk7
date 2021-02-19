@@ -13,7 +13,6 @@ class CreateQuotes < ActiveRecord::Migration[5.2]
       t.integer :maximum_occupancy
       t.integer :business_hours
       t.integer :elevator_amount
-      t.string :company_name
       t.string :product_line
       t.string :quotes_name
       t.string :quotes_email
