@@ -3,8 +3,10 @@
 
 
 Application for website of the Company of Rocket Elevators
-1. In this weeks requirement we were task with elevating our static site and turn it into a 
-      web application on MVC (Model - View - Controller) Ruby on Rails Application
+1. In this weeks requirement we were task with elevating our static site and turn it into a web application on MVC (Model - View - Controller) Ruby on Rails Application
+      - hjgjghj
+      - hgfvhv
+
 2. Running a rails server throught linux using Ubuntu
 3. Setting Database with Mysql and Postgresql ( even thought we didnt use it this week(Postgresql)) 
 4. Creating Database in Mysql and linking it to the Applicationog 
@@ -13,18 +15,23 @@ Application for website of the Company of Rocket Elevators
       - Admin page
       - Employees in Admin section
       - Users in Admin section
-      - Quotes
-                  *Employees
-                  - Users
-                  - Quotes
+      - Quotes in Admin section
+      - Charts in Admin section
+      - Diagrams in Admin section
+
+6. Using the Database with Rails
+7. Accessing the admin section
+8. Routes.rb
+9. URL for our site
+10. Gem used
+11. Deployement
 
 
 ## URL
 
 <https://rocketmax.xyz/>
 
-## Gems used
-
+## Gems used <img src="https://w7.pngwing.com/pngs/96/713/png-transparent-ruby-on-rails-programming-language-rubygems-php-ruby-gem-angle-heart-logo.png" align="right" alt="Rocket Elevators logo by Maxime Auger" width="70" height="">
 * gem 'devise'
       https://github.com/heartcombo/devise
 
@@ -43,9 +50,10 @@ Application for website of the Company of Rocket Elevators
 * gem 'hirb'
       http://tagaholic.me/hirb/doc/index.html
 
-      to use open -  
-                  -open rails console in terminal
-                  -run : Hirb.enable ( everytime you open the console)
+      to use open  
+            -open rails console in terminal
+            -run : Hirb.enable ( everytime you open the console)
+
 * gem 'cancancan'
       https://github.com/CanCanCommunity/cancancan/
 * 
