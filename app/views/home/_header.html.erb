@@ -10,6 +10,7 @@
 						</button>
 
 						<!-- Logo -->
+
 						
 						
 						<%# <a class="logo float-left scrollTo" href="index.html">
@@ -17,14 +18,18 @@
 						</a> %>
 						<a class="logo float-left" href="/home">
 							<img src="/assets/RE/re_logo.png" alt=""/>
+
 						</a>
 
 						<div class="navbar-collapse collapse float-right nav-main-collapse">
 							<nav class="nav-main">
 
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+
 									<li class="active"> <!-- HOME -->
 										<a id="home-nav" class="scrollTo" href="/home">
+
+
 											HOME
 										</a>
 									</li>
@@ -59,26 +64,27 @@
 										
 									</li>
 									<li>
-										<% if current_user %>
-										<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-										<% end %>
-									</li>
-									<li>
+									<a>
 										<% if !current_user %>
-										<%= link_to 'Sign up', "/signup" %>
+										<a href=<%= "signin" %>>LOG IN</a>
 										<% end %>
+									</a>
 									</li>
 									<li>
-										<% if !current_user %>
-										<%= link_to 'Sign in', "/signin" %>
-										<% end %>
-									</li>
-									<li>
+									<a>
 										<% if current_user%>
 											<% if current_user.admin%>
-											<a href=<%= "admin" %>>Employees section</a>
+											<a href=<%= "admin" %>>ADMIN</a>
 											<% end %>
 										<% end %>
+									</a>
+									</li>
+									<li>
+									<a>
+										<% if current_user %>
+										<%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %>
+										<% end %>
+									</a>
 									</li>
 								</ul>
 							</nav>

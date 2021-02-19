@@ -5,56 +5,49 @@
     </div>
     <!-- /Title -->
     <!-- Quote Form -->
-    <form id="Complete_form" enctype="multipart/form-data">
+
+    <%= form_for(Quote.new) do |f| %> 
+        <%= f.label :building_type %>
+        <%= f.select :building_type, [[' ',' '],['Residential','residential'],['Commercial','commercial'],['Corporate','corporate'],['Hybrid', 'hybrid']] %>
+
         <div class="container form">
-            <label for="building-type">Building Type</label> <!-- Building Type Selector -->
-            <select id="building-type" class="custom-select col-md-12">
-                <option value="select" selected>--Select--</option>
-                <option id="residential" value="residential">Residential</option>
-                <option id="commercial" value="commercial">Commercial</option>
-                <option id="corporate" value="corporate">Corporate</option>
-                <option id="hybrid" value="hybrid">Hybrid</option>
-            </select>
-            <!-- Fields -->
-            <div class="form row">
                 <input type="hidden" value="contact_send">
-                <div id="number-of-apartments" class="col-md-4" style="display: none;">
-                    <label for="quantity">NUMBER OF APARTMENTS</label>
-                    <input required type="number" id="quantity" class="form-control" min="1" max="1000">
+                 <div id="number-of-apartments" class="col-md-4" style="display: none;">
+                    <%= f.label :number_of_apartments %>
+                    <%= f.text_field :number_of_apartments %>
                 </div>
                 <div id="number-of-floors" class="col-md-4" style="display: none;">
-                    <label>NUMBER OF FLOORS</label>
-                    <input required type="number" class="form-control" min="0" max="1000">
+                <%= f.label :number_of_floors %>
+                <%= f.text_field :number_of_floors %>
                 </div>
                 <div id="number-of-basements" class="col-md-4" style="display: none;">
-                    <label>NUMBER OF BASEMENTS</label>
-                    <input required type="number" class="form-control" min="0" max="1000">
+                <%= f.label :number_of_basements %>
+                <%= f.text_field :number_of_basements %>
                 </div>
                 <div id="number-of-companies" class="col-md-4" style="display: none;">
-                    <label>NUMBER OF COMPANIES</label>
-                    <input required type="number" class="form-control" min="0" max="1000">
+                <%= f.label :number_of_companies %>
+                <%= f.text_field :number_of_companies %>
                 </div>
                 <div id="number-of-parking-spots" class="col-md-4" style="display: none;">
-                    <label>NUMBER OF PARKINGS</label>
-                    <input required type="number" class="form-control" min="0" max="1000">
+                <%= f.label :number_of_parking %>
+                <%= f.text_field :number_of_parking %>
                 </div>
                 <div id="number-of-elevators" class="col-md-4" style="display: none;">
-                    <label>NUMBER OF ELEVATORS</label>
-                    <input required type="number" class="form-control" min="0" max="1000">
+                <%= f.label :number_of_elevators %>
+                <%= f.text_field :number_of_elevators %>
                 </div>
                 <div id="number-of-corporations" class="col-md-4" style="display: none;">
-                    <label>NUMBER CORPORATIONS</label>
-                    <input required type="number" class="form-control" min="0" max="1000">
+                <%= f.label :number_of_corporations %>
+                <%= f.text_field :number_of_corporations %>
                 </div>
                 <div id="maximum-occupancy" class="col-md-4" style="display: none;">
-                    <label>MAXIMUM OCCUPANCY PER FLOOR</label>
-                    <input required type="number" class="form-control" min="0" max="10000">
+                <%= f.label :maximum_occupancy %>
+                <%= f.text_field :maximum_occupancy %>
                 </div>
                 <div id="business-hours" class="col-md-4" style="display: none;">
-                    <label>HOURS OF ACTIVITY</label>
-                    <input required type="number" class="form-control" min="0" max="24">
+                <%= f.label :business_hours %>
+                <%= f.text_field :business_hours %>
                 </div>
-            </div>
         </div>
 </div>
 <!-- /Fields -->
@@ -63,52 +56,44 @@
     <div id="package" class="container col-md-4">
         <label>PRODUCT LINE</label>
         <div class="form-check form-check-inline col-md-1">
-            <input class="form-check-input" type="radio" name="radiobutton" id="standard_input"
-                value="standard">
-            <label class="form-check-label" for="standard">Standard</label>
+            <%= f.radio_button :product_line, "standard" %>
+            <%= f.label "Standard" %>
         </div>
         <div class="form-check form-check-inline col-md-1">
-            <input class="form-check-input" type="radio" name="radiobutton" id="premium_input"
-                value="premium">
-            <label class="form-check-label" for="premium">Premium</label>
+            <%= f.radio_button :product_line, "premium" %>
+            <%= f.label "Premium" %>
         </div>
         <div class="form-check form-check-inline col-md-1">
-            <input class="form-check-input" type="radio" name="radiobutton" id="excelium_input"
-                value="excelium">
-            <label class="form-check-label" for="premium">Excelium</label>
+            <%= f.radio_button :product_line, "excelium" %>
+            <%= f.label "Excelium" %>
         </div>
     </div>
     <!-- /Product Line -->
     <!-- Prices -->
     <div class="container form col-md-4">
         <div id="elevator-amount" class="form-group col-md-4" style="display:none">
-            <label>NUMBER OF ELEVATORS</label>
-            <input class="form-control" type="number" readonly>
+            <%= f.label :elevator_amount %>
+            <%= f.text_field :elevator_amount %>
         </div>
         <div id="elevator-unit-price" class="form-group col-md-4" style="display:none">
-            <label>UNIT PRICE</label>
-            <input class="form-control" type="text" readonly>
+            <%= f.label :unit_price %>
+            <%= f.text_field :unit_price %>
         </div>
         <div id="elevator-total-price" class="form-group col-md-4" style="display:none">
-            <label>TOTAL ELEVATOR PRICE</label>
-            <input class="form-control" type="text" readonly>
+            <%= f.label :total_price %>
+            <%= f.text_field :total_price %>
         </div>
     </div>
 </div>
 <div class="container form col-md-4">
     <div id="installation-fees" class="col-md-4" style="display:none">
-        <label>INSTALLATION</label>
-        <input class="form-control" type="text" readonly>
+        <%= f.label :install_fees %>
+        <%= f.text_field :install_fees %>
     </div>
     <div id="final-price" class="col-md-4" style="display:none">
-        <label>FINAL PRICE</label>
-        <input class="form-control" type="" readonly>
+        <%= f.label :final_price %>
+        <%= f.text_field :final_price %>
     </div>
+    <%= submit_tag "Send Quote" %>
 </div>
-
-    <%= form_for(Quote.new) do |f| %> 
-    	<%= f.label :company_name %>
-    	<%= f.text_field :company_name %>
-
-        <%= f.submit "send quote", class: "btn btn-default"%> 
-    <% end %>
+<% end %>
