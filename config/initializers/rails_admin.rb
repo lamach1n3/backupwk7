@@ -1,5 +1,7 @@
 RailsAdmin.config do |config|
 
+  skip_before_action :verify_authenticity_token
+
   ### Popular gems integration
   config.authorize_with do
     if current_user
