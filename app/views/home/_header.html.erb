@@ -71,7 +71,7 @@
 									<li>
 									
 										<% if current_user %>
-										<%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %>
+										<%= link_to 'SIGN OUT', "/signout", method: :delete %>
 										<% end %>
 								
 									</li>
