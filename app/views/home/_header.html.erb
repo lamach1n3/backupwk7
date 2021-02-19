@@ -59,27 +59,27 @@
 										
 									</li>
 									<li>
-									<a>
+									
 										<% if !current_user %>
 										<a href=<%= "signin" %>>LOG IN</a>
 										<% end %>
-									</a>
+									
 									</li>
 									<li>
-									<a>
+									
 										<% if current_user%>
 											<% if current_user.admin%>
 											<a href=<%= "admin" %>>ADMIN</a>
 											<% end %>
 										<% end %>
-									</a>
+								
 									</li>
 									<li>
-									<a>
+									
 										<% if current_user %>
 										<%= link_to 'SIGN OUT', "/signout", method: :delete %>
 										<% end %>
-									</a>
+								
 									</li>
 								</ul>
 							</nav>
