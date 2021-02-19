@@ -1,5 +1,4 @@
 			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
-
 				<!-- TOP NAV -->
 				<header id="topNav">
 					<div class="container">
@@ -10,48 +9,48 @@
 						</button>
 
 						<!-- Logo -->
-						<a class="logo float-left scrollTo" href="index">
-							<img src="/assets/RE/re_logo.png" alt="" />
+						<a class="logo float-left" href="/home">
+							<img src="/assets/RE/re_logo.png" alt=""/>
 						</a>
 
 						<div class="navbar-collapse collapse float-right nav-main-collapse">
 							<nav class="nav-main">
 
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-									<li class="active"><!-- HOME -->
-										<a id="home-nav" class="scrollTo" href="index">
-											HOME
-										</a>
+
+									<li> <!-- HOME -->
+										<%= link_to "HOME" , "#{root_path}home"%>
 									</li>
 									<li><!-- SERVICES -->
-										<a id="services-nav" class="dropdown-toggle" data-toggle="dropdown"  href="#services">
+										<a id="services-nav" class="dropdown-toggle" data-toggle="dropdown"  href="/home#services">
 											SERVICES
 										</a>
 										<ul class="dropdown-menu">
-											<li class="dropdown-item"><a href="residential">Residential Buildings</a></li>
-											<li class="dropdown-item"><a href="commercial">Commercial Buildings</a></li>
-										  </ul>
+											<li class="dropdown-item"><a href="/residential">Residential Buildings</a></li>
+											<li class="dropdown-item"><a href="/commercial">Commercial Buildings</a></li>
+											<li class="dropdown-item"><a href="/quotes">Get A Quote</a></li>
+										</ul>
 									</li>
 									<li><!-- PORTFOLIO -->
-										<a id="porfolio-nav" href="index#porfolio">
-											PORTFOLIO
-										</a>
+										
+										<%= link_to "PORTFOLIO" , "#{root_path}home#portfolio"%>
+										
 										
 									</li>
 									<li><!-- NEWS -->
-										<a id="news-nav" href="index#news">
-											NEWS
-										</a>
+										
+										<%= link_to "NEWS" , "#{root_path}home#news"%>
+										
 									</li>
 									<li><!-- CLIENTS -->
-										<a id="clients-nav" href="index#clients">
-											CLIENTS
-										</a>
+										
+										<%= link_to "CLIENTS" , "#{root_path}home#clients"%>
+										
 									</li>
 									<li><!-- CONTACT -->
-										<a id="contact-nav" href="#contact">
-											CONTACT
-										</a>
+	
+										<%= link_to "CONTACT" , "#{root_path}home#contact"%>
+										
 									</li>
 									<li>
 									<a>
@@ -83,5 +82,6 @@
 					</div>
 				</header>
 				<!-- /Top Nav -->
+
 
 			</div>
