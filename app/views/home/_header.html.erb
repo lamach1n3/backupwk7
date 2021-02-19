@@ -16,6 +16,12 @@
 						<div class="navbar-collapse collapse float-right nav-main-collapse">
 							<nav class="nav-main">
 
+							<% flash.each do |type, msg| %>
+								<div>
+									<%= msg %>
+								</div>
+							<% end %>
+
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
 
 									<li> <!-- HOME -->

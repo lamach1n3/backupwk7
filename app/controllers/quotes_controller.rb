@@ -7,11 +7,9 @@ class QuotesController < ApplicationController
         @quote = Quote.new(quote_params)
 
         if @quote.final_price != '0.00 $' && @quote.final_price != '-$NaN' && @quote.save
-            flash[:success] = "Quote added to database!"
-            redirect_to main_app.root_path
+            redirect_to main_app.root_path, notice: "Quote sent!"
         else    
-            #failure alert?
-            redirect_to "/quotes"
+            redirect_to "/quotes", notice: "Invalid fields!"
         end
     end
 
