@@ -5,6 +5,5 @@ class PagesController < ApplicationController
     end
     def commercial
     end
-    
 end
 
