@@ -89,3 +89,19 @@ production:
   database: Rocket_Elevators_Information_System_production
   username: Rocket_Elevators_Information_System
   password: <%= ENV['ROCKET_ELEVATORS_INFORMATION_SYSTEM_DATABASE_PASSWORD'] %>
+
+
+<div class="container form col-md-4">
+    <div id="name" class="col-md-4" style="display:none">
+        <%= f.label :quotes_name %>
+        <%= f.text_field :quotes_name %>
+    </div>
+     <div id="email" class="col-md-4" style="display:none">
+        <%= f.label :quotes_email %>
+        <%= f.text_field :quotes_email %>
+    </div>
+     <div id="company name" class="col-md-4" style="display:none">
+        <%= f.label :quotes_company_name %>
+        <%= f.text_field :quotes_company_name %>
+    </div>
+</div>

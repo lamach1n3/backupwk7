@@ -15,6 +15,9 @@ class CreateQuotes < ActiveRecord::Migration[5.2]
       t.integer :elevator_amount
       t.string :company_name
       t.string :product_line
+      t.string :quotes_name
+      t.string :quotes_email
+      t.string :quotes_company_name
       t.string :install_fees
       t.string :total_price
       t.string :unit_price
