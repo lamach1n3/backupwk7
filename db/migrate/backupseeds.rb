@@ -46,12 +46,7 @@ def employee
 
 
 
-# # how to generete random info from array
-# # puts "### Seeding Quotes ###"
-
-# #     pl = ["Standard", "Premium", "Excelium"]
-# # puts(pl.sample)
-# # puts(pl.sample)
+# # 
 # # puts(pl.sample)
 # # puts(pl.sample)
 # # puts(pl.sample)
