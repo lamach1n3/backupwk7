@@ -110,13 +110,12 @@ function corpCalc() {
         let floor = parseInt($floor.val());
         let occ = parseInt($maximum.val());
 
-        let totalOccupant = (floor + base) * occ;
-           totalElevator = totalOccupant / 1000;
+        let totalOccupant = floor * occ;
+           totalElevator = Math.ceil(totalOccupant / 1000);
         let column = Math.ceil((floor + base) / 20);
 
         $elevatorResults.val(totalElevator);
     });
-
 }
 
 
