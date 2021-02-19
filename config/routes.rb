@@ -10,11 +10,7 @@ Rails.application.routes.draw do
   root to: "home#index"
   
   get '/commercial'    => 'pages#commercial'
-<<<<<<< HEAD
   get "/home"         => 'home#index'
-=======
-  get '/home'         => 'pages#index'
->>>>>>> master
   get '/error'        => 'pages#404'
   get '/quotes'        =>  'quotes#quotes'
   get '/residential'  => 'pages#residential'

@@ -10,15 +10,8 @@
 						</button>
 
 						<!-- Logo -->
-
-						
-						
-						<%# <a class="logo float-left scrollTo" href="index.html">
-							<img src="/assets/RE/re_logo.png" alt="">
-						</a> %>
 						<a class="logo float-left" href="/home">
 							<img src="/assets/RE/re_logo.png" alt=""/>
-
 						</a>
 
 						<div class="navbar-collapse collapse float-right nav-main-collapse">
@@ -27,11 +20,7 @@
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
 
 									<li class="active"> <!-- HOME -->
-										<a id="home-nav" class="scrollTo" href="/home">
-
-
-											HOME
-										</a>
+										<%= link_to "HOME" , "#{root_path}home"%>
 									</li>
 									<li><!-- SERVICES -->
 										<a id="services-nav" class="dropdown-toggle" data-toggle="dropdown"  href="/home#services">
@@ -40,7 +29,8 @@
 										<ul class="dropdown-menu">
 											<li class="dropdown-item"><a href="/residential">Residential Buildings</a></li>
 											<li class="dropdown-item"><a href="/commercial">Commercial Buildings</a></li>
-										  </ul>
+											<li class="dropdown-item"><a href="/quotes">Get A Quote</a></li>
+										</ul>
 									</li>
 									<li><!-- PORTFOLIO -->
 										
