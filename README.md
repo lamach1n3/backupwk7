@@ -1,29 +1,55 @@
-# Rocket_Elevators_Information_System
-Application for website of the Company of Rocket Elevators
-## URL
-<https://rocketmax.xyz/>
-## Gems used
-* gem 'devise'
+# Rocket Elevators Information System <img src="https://rocketmax.xyz/assets/RE/re_logo.png" align="right" alt="Rocket Elevators logo by Maxime Auger" width="100" height="">
 
+
+
+Application for website of the Company of Rocket Elevators
+1. In this weeks requirement we were task with elevating our static site and turn it into a 
+      web application on MVC (Model - View - Controller) Ruby on Rails Application
+2. Running a rails server throught linux using Ubuntu
+3. Setting Database with Mysql and Postgresql ( even thought we didnt use it this week(Postgresql)) 
+4. Creating Database in Mysql and linking it to the Applicationog 
+5. Setting a Back office to the site and added
+      - Login In page
+      - Admin page
+      - Employees in Admin section
+      - Users in Admin section
+      - Quotes
+                  *Employees
+                  - Users
+                  - Quotes
+
+
+## URL
+
+<https://rocketmax.xyz/>
+
+## Gems used
+
+* gem 'devise'
+      https://github.com/heartcombo/devise
 
 * gem 'rails-admin'
-
+      https://github.com/sferik/rails_admin/
 
 * gem 'faker'
-
+      https://github.com/faker-ruby/faker
 
 * gem 'rubocop'
       https://github.com/rubocop-hq/rubocop
+
 * gem 'sprockets-rails'
       https://github.com/rails/sprockets-rails/
+
 * gem 'hirb'
       http://tagaholic.me/hirb/doc/index.html
+
       to use open -  
                   -open rails console in terminal
                   -run : Hirb.enable ( everytime you open the console)
-* cancancan
-* df
-* fd
+* gem 'cancancan'
+      https://github.com/CanCanCommunity/cancancan/
+* 
+* 
 * 
 
 ### pour la creation des tables dans mysql avec model
