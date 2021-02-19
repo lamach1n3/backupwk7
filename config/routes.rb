@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'home/index'
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
   get 'pages/404'
   get 'quotes/quotes'
   devise_for :users
-
+  
   root to: "home#index"
   
   get '/commercial'    => 'pages#commercial'
