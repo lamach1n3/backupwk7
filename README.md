@@ -21,7 +21,7 @@ Application for website of the Company of Rocket Elevators
       to use open -  
                   -open rails console in terminal
                   -run : Hirb.enable ( everytime you open the console)
-* df
+* cancancan
 * df
 * fd
 * 
