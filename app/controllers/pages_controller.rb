@@ -5,5 +5,9 @@ class PagesController < ApplicationController
     end
     def commercial
     end
+    def charts
+    end
+    def diagram
+    end
 end
 

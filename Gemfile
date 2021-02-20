@@ -25,6 +25,7 @@ gem 'rubocop', require: false
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 gem 'hirb'
+gem 'cancancan'
 # ===============================================================
 # ===============================================================
 
