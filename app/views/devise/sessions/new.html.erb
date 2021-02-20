@@ -1,15 +1,16 @@
 <div class='container'>
-
-  <h2>Log in</h2>
-
+<br/>
+    <div class="heading-title">
+      <h2>Log in</h2>
+    </div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email"%>
     </div>
-
+    </br>
     <div class="field">
-      <%= f.label :password %><br />
+      <%= f.label :password %>
       <%= f.password_field :password, autocomplete: "current-password" %>
     </div>
 
@@ -19,15 +20,15 @@
         <%= f.label :remember_me %>
       </div>
     <% end %>
-
+     </br>
     <div class="actions">
-      <%= f.submit "Log in" %>
+      <%= f.submit "Log in", class: 'btn btn-primary' %>
     </div>
   <% end %>
-
+    <p>
       -------- or ---------
-  <br/><br/>
+    </p>
   <%= button_to "Sign up", "/signup", :id => "open-contacts-dialog-btn",
-        :class => "inbox-sf-add-btn tip", :method => :get %>
+        :class => "inbox-sf-add-btn tip btn btn-primary", :method => :get %>
 
 </div>
