@@ -1,37 +1,100 @@
-# Rocket Elevators Information System <img src="https://rocketmax.xyz/assets/RE/re_logo.png" align="right" alt="Rocket Elevators logo by Maxime Auger" width="100" height="">
+# Rocket Elevators Information System <img src="app/assets/images/favicon.png" align="right" alt="Rocket Elevators logo by Maxime Auger" width="100" height="">
 
 
 
 Application for website of the Company of Rocket Elevators
 1. In this weeks requirement we were task with elevating our static site and turn it into a web application on MVC (Model - View - Controller) Ruby on Rails Application
-      - hjgjghj
-      - hgfvhv
+      - create the partials for rails (Headers and Footers)
+      - create the routes (see section 8.)
+      - convert static .html pages to .html.rb
+      - create controllers
+
 
 2. Running a rails server throught linux using Ubuntu
 3. Setting Database with Mysql and Postgresql ( even thought we didnt use it this week(Postgresql)) 
-4. Creating Database in Mysql and linking it to the Applicationog 
-5. Setting a Back office to the site and added
-      - Login In page
-      - Admin page
+4. Creating Database in Mysql and linking it to the Application 
+5. Setting a Back office to the site using Gems (see section 10.) and added
+      - Login In in Nav bar
+      - Admin page in Nav bar
       - Employees in Admin section
       - Users in Admin section
       - Quotes in Admin section
-      - Charts in Admin section
-      - Diagrams in Admin section
+
 
 6. Using the Database with Rails
 7. Accessing the admin section
 8. Routes.rb
 9. URL for our site
 10. Gem used
-11. Deployement
+11. Diagram
+12. Video link
+13. Team
 
 
-## URL
 
-<https://rocketmax.xyz/>
 
-## Gems used <img src="https://w7.pngwing.com/pngs/96/713/png-transparent-ruby-on-rails-programming-language-rubygems-php-ruby-gem-angle-heart-logo.png" align="right" alt="Rocket Elevators logo by Maxime Auger" width="70" height="">
+
+
+
+1 -  Ruby on Rails to convert a static page you need to adapt it to ruby by doing
+some conversion to your static page. we used this link a lot to help us out at first
+https://tatyanacodes.wordpress.com/2015/07/30/static-website-to-ruby-on-rails-web-application/
+We build some partials which are in charge of loading the footers and headers for all pages
+
+![](partials.png)
+
+2 - Linux terminal for windows where all the magic happens this week. Within this terminal is where you will enable your rails server like so
+- type in the terminal : rails server (keep in mind for this to work you should have Ubuntu, rails, ruby, mysql and postgresql installed)
+
+![](ubuntu.png)
+
+3 - installing mysql on ubuntu  https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
+
+4 - for creating tables in mysql with mondels
+- rails g model tableName
+- once the table created you need to upload them through migration
+- rails db:drop
+- rails db:create
+- rails db:migrate
+- rails db:seed ( used to populate your database if needed)
+
+![](mysql.png)
+
+5 - Ruby on rails Back office was produced using mainly 2 gems rails-admin et devise
+- devise was mainly used for the signin, signup and log in
+- rails-admin for the admin section the whole back office
+
+![](backoffice.png)
+
+6 - To access the database from the rails server 
+- rails c
+- Hirb.enable
+- User.all to query the users
+- exit to exit the console
+
+![](railsdb.png)
+
+7 - 📚 Instructions to acces to the admin panel:
+
+
+To log as Admin:
+```
+1. click the log in the nav bar
+2. Username:admin@admin.com
+3. password: 123456
+4. click on the admin button in nav bar
+```
+![](login.png)
+
+8 - Routes is the backbone that directs the application to different pages using controllers
+
+
+![](routes.png)
+
+9 - you can access our live site @
+https://rocketmax.xyz/
+
+10 - Gems used <img src="https://w7.pngwing.com/pngs/96/713/png-transparent-ruby-on-rails-programming-language-rubygems-php-ruby-gem-angle-heart-logo.png" align="right" alt="Rocket Elevators logo by Maxime Auger" width="70" height="">
 * gem 'devise'
       https://github.com/heartcombo/devise
 
@@ -54,52 +117,19 @@ Application for website of the Company of Rocket Elevators
             -open rails console in terminal
             -run : Hirb.enable ( everytime you open the console)
 
-* gem 'cancancan'
-      https://github.com/CanCanCommunity/cancancan/
-* 
-* 
-* 
+11 - The final product of our database for this week with its association represented in a Diagram (https://dbdiagram.io/)
+![](wk4tablediagram.png)
 
-### pour la creation des tables dans mysql avec model
-rails g model TableName
-pour Quotes Employees Users
+12 - Link to our Video for week 4
+https://youtu.be/1h2rkXGJY-c
 
-### pour les seeds
 
-## Infos development:
-### After pull:
-```
-bundle install
-rails db:drop
-rails db:create
-rails db:migrate
-rails db:seed ( if you want to populate your database )
-```
-📚 Instructions to acces to the admin panel:
-
-To log as Admin:
-
-```sh
-1. Navigation bar : Member
-2. Login
-3. Username: mathieu.houde@codeboxx.biz
-   password: 123456
-4. Member : Admin Panel
-```
-
-## :memo: Routes
-
-- homepage: <b>/</b>
-- residential page: <b>/residential</b>
-- commercial page: <b>/commercial</b>
-- form page: <b>/form</b>
-- thank you page: <b>/thank-you</b>
-- Admin panel: <b>/admin</b>
-
-```sh
-rake routes
-```
-![](routes.png)
+13 - OUR TEAM !!!!!
+- Adrien Gobeil
+- Charles Hall
+- Eric Turcotte
+- Jean-Francois Taillefer
+- Maxime Auger
 
 
 
@@ -119,30 +149,3 @@ rake routes
 
 
 
-
-
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# Rocket_Elevators_Information_System

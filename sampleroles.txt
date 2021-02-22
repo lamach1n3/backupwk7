@@ -109,3 +109,4 @@ production:
 feed 404 when wrong address
 if route redirect to 404
 news mcourier 
+rails g model full_name:string email:string phone:string company_name:string project_name:string department:string project_description:string message:text contact_attachment:binary

@@ -23,14 +23,17 @@ Rails.application.routes.draw do
   get '/clients'      => 'home#clients'
   get '/contact'      => 'contact#index'
   get '/portfolio'    => 'home#portfolio'
-  # post '/leads'     => 'leads#create'
+  post '/leads'     => 'leads#create'
   post '/quotes'      => 'quotes#create'
+
+
   
    
   devise_scope :user do 
     get "/signup"     => "devise/registrations#new" 
     get "/signin"     => "devise/sessions#new" 
     get "/signout"    => "devise/sessions#destroy"
+    get "/changepassword" => "devise/passwords#new"
   end
 
   Rails.application.routes.draw do
