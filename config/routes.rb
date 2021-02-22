@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     get "/signup"     => "devise/registrations#new" 
     get "/signin"     => "devise/sessions#new" 
     get "/signout"    => "devise/sessions#destroy"
+    get "/changepassword" => "devise/passwords#new"
   end
 
   Rails.application.routes.draw do
