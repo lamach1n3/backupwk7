@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'home/index'
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   # get 'pages/charts'
   # get 'pages/diagram'
   devise_for :users
-
+  
   root to: "home#index"
   
   get '/commercial'   => 'pages#commercial'
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
     get "/signup"     => "devise/registrations#new" 
     get "/signin"     => "devise/sessions#new" 
     get "/signout"    => "devise/sessions#destroy"
+    get "/changepassword" => "devise/passwords#new"
   end
 
   Rails.application.routes.draw do
