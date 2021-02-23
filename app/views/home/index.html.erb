@@ -810,20 +810,26 @@
 									<div class="row">
 											<div id="contact_message" class="col-md-12" >
 											<%= f.label :message %>
-											<%= f.text_area :message, :cols => 54, :rows => 6 %>											</div>
+											<%= f.text_area :message, :cols => 54, :rows => 6 %>											
 									</div>
+							
+							
+									
+							
+							<%# =============================attachment file upload================================ %>
 									<div class="row">
-											<%# <div class="col-md-12"> %>
-		<%# TODO: File attachment ---------> %>
+											<div class="col-md-12"> 
+		  
 
-												<%# <label for="contact_attachment">File Attachment</label> %>
+												<label for="contact_attachment">File Attachment</label>
 								
 												<!-- custom file upload -->
-												<%# <input id="attachment" class="custom-file-upload" type="file" id="file" name="contact[attachment]"data-btn-text="Select a File" />
+												<input id="attachment" class="custom-file-upload" type="file" id="file" name="contact[contact_attachment]"data-btn-text="Select a File" />
 												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
 
-											</div> %>
+											</div>
 									</div>
+							<%# =============================attachment file upload================================ %>
 
 								</fieldset>
 
