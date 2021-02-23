@@ -77,3 +77,37 @@ end
               # created_at:dateCreationUpdate
       )
   end
+
+  # creating addresses for each user using faker?
+
+  # User.all.each do |user|
+  #   address = Address.new({
+  #     type_adress: "User's address",
+  #     status: "Status",
+  #     entity: "User",                      
+  #     number_street: Faker::Address.street_address,
+  #     suite_apt: Faker::Address.secondary_address,
+  #     city: Faker::Address.city,
+  #     postal_code: Faker::Address.zip_code,
+  #     country: Faker::Address.country,
+  #   })
+  #   address.save!
+  #  end 
+
+  # creating addresses for each building using faker
+
+   Building.all.each do |building|
+    address = Address.new({
+      type_adress: "Building address",
+      status: "Status",
+      entity: "Building",
+      number_street: Faker::Address.street_address,
+      suite_apt: Faker::Address.secondary_address,
+      city: Faker::Address.city,
+      postal_code: Faker::Address.zip_code,
+      country: Faker::Address.country,
+
+      building.address_id = address.number_street
+    })
+    address.save!
+   end 
