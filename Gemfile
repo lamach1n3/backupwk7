@@ -26,6 +26,8 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 gem 'hirb'
 gem 'cancancan'
+gem 'pg'
+gem 'multiverse'
 # ===============================================================
 # ===============================================================
 
