@@ -117,3 +117,5 @@ rails g model full_name:string email:string phone:string company_name:string pro
 gonna add models tonigth 
 clean the root directory
 push on dev
+fix readme add users login add forgot password\
+add gemas
