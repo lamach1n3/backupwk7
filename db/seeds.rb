@@ -14,7 +14,7 @@ Employee.create(first_name:"Thomas", last_name:"Carrier", function:"Engineer", p
 Employee.create(first_name:"Admin", last_name:"Admin", function:"Admin", phone:"roc-kets", email:"admin@admin.com" )
 Employee.create(first_name:"Admin1", last_name:"Admin1", function:"Admin1", phone:"roc-kets", email:"admin1@admin1.com" )
 
-# for each employees we also create a user with acces to the admin panel 
+# # for each employees we also create a user with acces to the admin panel 
 
 Employee.all.each do |employee|
     user = User.new({
@@ -26,10 +26,10 @@ Employee.all.each do |employee|
     employee.save!
    end 
 
-# we are supplying the client with some generate data using faker
-# so on top of our 7 employees which are also clients we will add 13 new users who dont
-# have access to the admin section using faker
-# you can add a new user simply by going to the logging menu and hit sign up
+# # we are supplying the client with some generate data using faker
+# # so on top of our 7 employees which are also clients we will add 13 new users who dont
+# # have access to the admin section using faker
+# # you can add a new user simply by going to the logging menu and hit sign up
 
 13.times do
   User.create(
@@ -40,11 +40,13 @@ Employee.all.each do |employee|
 end
 
 
-
+# Quote.create(install_fees: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
+#             quotes_name: Faker::Name.name          
+# )
 # if you fill in the quotes form it will automatically  add it to the quotes form but we will
 # also provide you with a sample using "faker"
 
-10.times do
+50.times do
   
       pl = ["Standard", "Premium", "Excelium"]
       bt = ["Residential", "Commercial", "Corporate", "Hybrid"]
@@ -58,7 +60,7 @@ end
               number_of_basements: Faker::Number.between(from: 1, to: 10),
               number_of_corporations: Faker::Number.between(from: 1, to: 100),
               elevator_amount: Faker::Number.between(from: 1, to: 100),
-              quotes_name: Faker::Name.name, 
+              quotes_name: Faker::Name.name,
               quotes_email: Faker::Internet.email,
               quotes_company_name: Faker::Company.name,
               building_type: (bt.sample),
