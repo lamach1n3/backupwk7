@@ -116,3 +116,4 @@ rails g model full_name:string email:string phone:string company_name:string pro
 # double check for the date creation CUstomer can we use the t.timestamp
 gonna add models tonigth 
 clean the root directory
+push on dev
