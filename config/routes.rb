@@ -23,8 +23,10 @@ Rails.application.routes.draw do
   get '/clients'      => 'home#clients'
   get '/contact'      => 'contact#index'
   get '/portfolio'    => 'home#portfolio'
-  # post '/leads'     => 'leads#create'
+  post '/leads'     => 'leads#create'
   post '/quotes'      => 'quotes#create'
+
+
   
    
   devise_scope :user do 
