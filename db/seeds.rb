@@ -61,8 +61,10 @@ end
               number_of_corporations: Faker::Number.between(from: 1, to: 100),
               elevator_amount: Faker::Number.between(from: 1, to: 100),
               quotes_name: Faker::Name.name,
+              
               quotes_email: Faker::Internet.email,
               quotes_company_name: Faker::Company.name,
+             
               building_type: (bt.sample),
               final_price: Faker::Number.between(from: 50000, to: 800000),
               number_of_companies: Faker::Number.between(from: 1, to: 5),
