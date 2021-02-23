@@ -132,8 +132,16 @@ https://youtu.be/1h2rkXGJY-c
 - Maxime Auger
 
 
+added 
 
-
+mysql table 
+leads
+addresses
+batteries
+buildings
+buildingdetails
+columns
+eelvators
 
 
 

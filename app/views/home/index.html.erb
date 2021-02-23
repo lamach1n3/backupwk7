@@ -773,42 +773,42 @@
 									<input type="hidden" name="action" value="contact_send" />
 
 									<div class="row">
-											<div class="col-md-4">
+											<div id="contact_full_name" class="col-md-4" >
 												<%= f.label :full_name %>
                 								<%= f.text_field :full_name , class:"form-control" %>
 											</div>
-											<div class="col-md-4">
+											<div id="contact_email" class="col-md-4" >
 												<%= f.label :email %>
                 								<%= f.email_field :email, class:"form-control" %>
 											</div>
-											<div class="col-md-4">
+											<div id="contact_phone" class="col-md-4" >
 												<%= f.label :phone %>
                 								<%= f.text_field :phone , class:"form-control" %>
 											</div>
 									</div>
 									<div class="row">
-											<div class="col-md-4">
+											<div id="contact_company_name" class="col-md-4" >
 												<%= f.label :company_name %>
                 								<%= f.text_field :company_name , class:"form-control" %>
 											</div>
-											<div class="col-md-4">
+											<div id="contact_projetc_name" class="col-md-4" >
 												<%= f.label :project_name %>
                 								<%= f.text_field :project_name , class:"form-control" %>
 											</div>
-											<div class="col-md-4">
+											<div id="contact_department" class="col-md-4" >
 												<%= f.label :department %>
             									<%= f.select :department, [[' ',' '],['Residential','residential'],['Commercial','commercial'],['Corporate','corporate'],['Hybrid', 'hybrid']] %>
 											</div>
 									</div>
 									<div class="row">
-										<div class="col-md-12">
+										<div id="contact_project_description" class="col-md-12" >
 											<%= f.label :project_description %>
 											<%= f.text_area :project_description, :cols => 54, :rows => 6 %>
 										</div>
 									</div>
 
 									<div class="row">
-											<div class="col-md-12">
+											<div id="contact_message" class="col-md-12" >
 											<%= f.label :message %>
 											<%= f.text_area :message, :cols => 54, :rows => 6 %>											</div>
 									</div>
