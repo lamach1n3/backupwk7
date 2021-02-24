@@ -4,7 +4,7 @@ class CreateDimCustomers < ActiveRecord::Migration[5.2]
       t.date :Creation_Date
       t.string :Company_name
       t.string :FN_Cpy_main_ct
-      t.string :Email_Cpy_man_ct
+      t.string :Email_Cpy_main_ct
       t.integer :NbElevators
       t.string :CustomerCity
 
