@@ -46,35 +46,35 @@ end
 # # if you fill in the quotes form it will automatically  add it to the quotes form but we will
 # # also provide you with a sample using "faker"
 
-# 50.times do
+50.times do
   
-#       pl = ["Standard", "Premium", "Excelium"]
-#       bt = ["Residential", "Commercial", "Corporate", "Hybrid"]
-#       dateCreationUpdate = Faker::Date.between(from: '2017-09-23', to: '2020-09-25')
-#   Quote.create(
-#               install_fees: Faker::Number.between(from: 500, to: 2000),
-#               total_price: Faker::Number.between(from: 50000, to: 200000),
-#               product_line: (pl.sample),
-#               number_of_apartments: Faker::Number.between(from: 50, to: 200),
-#               number_of_floors: Faker::Number.between(from: 10, to: 70),
-#               number_of_basements: Faker::Number.between(from: 1, to: 10),
-#               number_of_corporations: Faker::Number.between(from: 1, to: 100),
-#               elevator_amount: Faker::Number.between(from: 1, to: 100),
-#               quotes_name: Faker::Name.name,
-#               quotes_email: Faker::Internet.email,
-#               quotes_company_name: Faker::Company.name,
-#               building_type: (bt.sample),
-#               final_price: Faker::Number.between(from: 50000, to: 800000),
-#               number_of_companies: Faker::Number.between(from: 1, to: 5),
-#               number_of_parking: Faker::Number.between(from: 50, to: 200),
-#               maximum_occupancy: Faker::Number.between(from: 50, to: 200),
-#               business_hours: Faker::Number.between(from: 0, to: 24),
-#               number_of_elevators: Faker::Number.between(from: 1, to: 15),
-#               unit_price: Faker::Number.between(from: 11000, to: 15000),
-#               # updated_at: dateCreationUpdate,
-#               # created_at:dateCreationUpdate
-#       )
-#   end
+      pl = ["Standard", "Premium", "Excelium"]
+      bt = ["Residential", "Commercial", "Corporate", "Hybrid"]
+      dateCreationUpdate = Faker::Date.between(from: '2017-09-23', to: '2020-09-25')
+  Quote.create(
+              install_fees: Faker::Number.between(from: 500, to: 2000),
+              total_price: Faker::Number.between(from: 50000, to: 200000),
+              product_line: (pl.sample),
+              number_of_apartments: Faker::Number.between(from: 50, to: 200),
+              number_of_floors: Faker::Number.between(from: 10, to: 70),
+              number_of_basements: Faker::Number.between(from: 1, to: 10),
+              number_of_corporations: Faker::Number.between(from: 1, to: 100),
+              elevator_amount: Faker::Number.between(from: 1, to: 100),
+              quotes_name: Faker::Name.name,
+              quotes_email: Faker::Internet.email,
+              quotes_company_name: Faker::Company.name,
+              building_type: (bt.sample),
+              final_price: Faker::Number.between(from: 50000, to: 800000),
+              number_of_companies: Faker::Number.between(from: 1, to: 5),
+              number_of_parking: Faker::Number.between(from: 50, to: 200),
+              maximum_occupancy: Faker::Number.between(from: 50, to: 200),
+              business_hours: Faker::Number.between(from: 0, to: 24),
+              number_of_elevators: Faker::Number.between(from: 1, to: 15),
+              unit_price: Faker::Number.between(from: 11000, to: 15000),
+              # updated_at: dateCreationUpdate,
+              # created_at:dateCreationUpdate
+      )
+  end
 
 # #   # creating addresses for each user using faker?
 
@@ -96,7 +96,6 @@ end
 
 
 
-<<<<<<< HEAD
 50.times do
     status = ["Online", "Offline", "Online", "Online"]
     bt = ["Residential", "Commercial", "Corporate", "Hybrid"]
@@ -164,7 +163,6 @@ end
   #     notes:"fdsfsdfsf"
   #     # how to add column_id
   # )
-=======
   #  Building.all.each do |building|
   #   address = Address.new({
   #     type_adress: "Building address",
@@ -179,4 +177,3 @@ end
   #   building.address_id = address.number_street
   #   address.save!
   #  end 
->>>>>>> dev
