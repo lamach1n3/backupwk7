@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "building_id"
+    t.index ["building_id"], name: "index_addresses_on_building_id"
   end
 
   create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -176,6 +178,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "buildings"
   add_foreign_key "batteries", "buildings"
   add_foreign_key "batteries", "employees"
   add_foreign_key "building_details", "buildings"

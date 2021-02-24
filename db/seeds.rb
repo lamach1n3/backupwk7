@@ -9,7 +9,7 @@ end
 
 def employee_create(first_name, last_name, function, phone, email)
   @user = user_create(email, 123456, 123456, true)
-  @employee = Employee.create({first_name: first_name, last_name: last_name, function: function, phone: phone, email: email})
+  @employee = Employee.create({first_name: first_name, last_name: last_name, function: function, phone: phone, email: email, user: @user})
   @employee.save!
 end
 
@@ -23,16 +23,18 @@ def customer_create(company_name, cpy_contact_email, tech_manager_service_email)
 end 
 
 def building_create(tech_contact_email, customer)
-  @building = Building.new({tech_contact_email: tech_contact_email, customer: customer})
+  @building = Building.new({tech_contact_email: tech_contact_email, customer: customer, address: address_create("A", "B", "C", "123", "456", "D", "123132", "Canada", "yoyo")})
   @building.save!
 
   battery_create(@building)
   building_detail_create(@building)
 end
 
-def address_create()
-  @address = Address.new({})
+def address_create(type_adress, status, entity, number_street, suite_apt, city, postal_code, country, notes)
+  @address = Address.new({type_adress: type_adress, status: status, entity: entity, number_street: number_street, suite_apt: suite_apt, city: city,
+   postal_code:postal_code, country: country, notes: notes})
   @address.save!
+  return @address
 end
 
 def building_detail_create(building)
