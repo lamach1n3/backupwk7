@@ -4,7 +4,12 @@ class LeadsController < ApplicationController
     end
 
     def create
+        
+        # file = lead_params.delete(:file)
+        # filedata = file.read
+        
         @lead = Lead.new(lead_params)
+        # @lead.contact_attachment = filedata
         @lead.save!
         
         if @lead.save
@@ -18,6 +23,6 @@ class LeadsController < ApplicationController
 
     def lead_params
       params.require(:lead).permit(:full_name, :email, :phone, :company_name, :project_name, :department, :project_description,
-      :message, :contact_attachment)
+      :message, :contact_attachment, :file)
     end
 end
