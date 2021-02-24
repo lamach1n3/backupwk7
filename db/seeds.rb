@@ -7,11 +7,13 @@ def user_create(email, password, password_confirmation, admin)
   return @user
 end
 
+
 def employee_create(first_name, last_name, function, phone, email)
   @user = user_create(email, 123456, 123456, true)
   @employee = Employee.create({first_name: first_name, last_name: last_name, function: function, phone: phone, email: email, user: @user})
   @employee.save!
 end
+
 
 def customer_create(company_name, cpy_contact_email, tech_manager_service_email)
   @user = user_create(cpy_contact_email, 123456, 123456, false)
@@ -19,47 +21,63 @@ def customer_create(company_name, cpy_contact_email, tech_manager_service_email)
   tech_manager_service_email: tech_manager_service_email, user: @user})
   @customer.save!
 
-  building_create(tech_manager_service_email, @customer)
+  rand(1..3).times do 
+    building_create(tech_manager_service_email, @customer)
+  end
 end 
 
+
 def building_create(tech_contact_email, customer)
-  @building = Building.new({tech_contact_email: tech_contact_email, customer: customer, address: address_create("A", "B", "C", "123", "456", "D", "123132", "Canada", "yoyo")})
+  @building = Building.new({tech_contact_email: tech_contact_email, customer: customer, 
+  address: address_create(
+    "A", "B", "C", "123", "456", "D", "123132", "Canada", "yoyo")})
   @building.save!
 
   battery_create(@building)
   building_detail_create(@building)
 end
 
+
 def address_create(type_adress, status, entity, number_street, suite_apt, city, postal_code, country, notes)
-  @address = Address.new({type_adress: type_adress, status: status, entity: entity, number_street: number_street, suite_apt: suite_apt, city: city,
-   postal_code:postal_code, country: country, notes: notes})
+  @address = Address.new({
+    type_adress: type_adress, status: status, entity: entity, number_street: number_street, suite_apt: suite_apt, city: city,
+    postal_code:postal_code, country: country, notes: notes})
   @address.save!
   return @address
 end
+
 
 def building_detail_create(building)
   @building_detail = BuildingDetail.new({building: building})
   @building_detail.save!
 end
 
+
 def battery_create(building)
   @battery = Battery.new({building: building})
   @battery.save!
 
-  column_create(@battery)
+  rand(1..6).times do
+    column_create(@battery)
+  end
 end
+
 
 def column_create(battery)
   @column = Column.new({battery: battery})
   @column.save!
 
-  elevator_create(@column)
+  rand(2..4).times do
+    elevator_create(@column)
+  end
 end
+
 
 def elevator_create(column)
   @elevator = Elevator.new({column: column})
   @elevator.save!
 end
+
 
 employee_create("Nicolas", "Genest", "CEO", 'roc-kets', "nicolas.genest@codeboxx.biz")
 employee_create("Nadya", "Fortier", "Director", "roc-kets", "nadya.fortier@codeboxx.biz")
@@ -71,58 +89,17 @@ employee_create("Thomas", "Carrier", "Engineer", "roc-kets", "thomas.carriert@co
 employee_create("Admin1", "Admin1", "Admin1", "roc-kets", "admin1@admin1.com")
 employee_create("Admin", "Admin", "Admin", "roc-kets", "admin@admin.com")
 
-customer_create("apple", "apple@apple.com", "tech@apple.com")
+10.times do 
+  customer_create(
+    Faker::Company.name,
+    Faker::Internet.email,
+    Faker::Internet.email
+  )  
+end
 
-# To setup customers they must be entered manually by the site administrator
-
-# Customer.create(company_name: "Apple", cpy_contact_email: "apple@apple.com", 
-# tech_manager_service_email: "tech@apple.com")
-
-# for each customer we also create a user
-
-# Customer.all.each do |customer|
-#   user = User.new({
-#     email: customer.cpy_contact_email,
-#     password: 123456,
-#     password_confirmation: 123456})
-#   customer.user = user
-#   customer.save!
-#  end 
-
-
-#  Customer.all.each do |customer|
-#   building = Building.new({
-#     tech_contact_email: customer.tech_manager_service_email})
-#   building.customer_id = customer
-#   building.save!
-#  end 
-
-
-#  Building.all.each do |building|
-#   building_details = BuildingDetail.new({
-#     building_id: building})
-#   building_details.save!
-#  end 
-
-
-#  Building.all.each do |building|
-#   battery = Battery.new({
-#     building_id: building})
-#   battery.save!
-#  end 
-
-
-# # we are supplying the client with some generate data using faker
-# # so on top of our 7 employees which are also clients we will add 13 new users who dont
-# # have access to the admin section using faker
-# # you can add a new user simply by going to the logging menu and hit sign up
 
 13.times do
-  User.create(
-    email: Faker::Internet.email,
-    password: 111111,
-    password_confirmation: 111111
-  )
+  user_create(Faker::Internet.email, 111111, 111111, false)
 end
 
 
@@ -161,36 +138,3 @@ end
               # created_at:dateCreationUpdate
       )
   end
-
-  # creating addresses for each user using faker?
-
-  # User.all.each do |user|
-  #   address = Address.new({
-  #     type_adress: "User's address",
-  #     status: "Status",
-  #     entity: "User",                      
-  #     number_street: Faker::Address.street_address,
-  #     suite_apt: Faker::Address.secondary_address,
-  #     city: Faker::Address.city,
-  #     postal_code: Faker::Address.zip_code,
-  #     country: Faker::Address.country,
-  #   })
-  #   address.save!
-  #  end 
-
-  # creating addresses for each building using faker
-
-  #  Building.all.each do |building|
-  #   address = Address.new({
-  #     type_adress: "Building address",
-  #     status: "Status",
-  #     entity: "Building",
-  #     number_street: Faker::Address.street_address,
-  #     suite_apt: Faker::Address.secondary_address,
-  #     city: Faker::Address.city,
-  #     postal_code: Faker::Address.zip_code,
-  #     country: Faker::Address.country,
-  #   })
-  #   building.address_id = address.number_street
-  #   address.save!
-  #  end 
