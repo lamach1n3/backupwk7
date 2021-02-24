@@ -1,30 +1,114 @@
-
 require 'faker'
 
 
-# To setup employees they must be enter manually by the site administrator 
+def user_create(email, password, password_confirmation, admin)
+  @user = User.new({email: email, password: password, password_confirmation: password_confirmation, admin: admin})
+  @user.save!
+  return @user
+end
 
-Employee.create(first_name:"Nicolas", last_name:"genest", function:"CEO", phone:"roc-kets", email:"nicolas.genest@codeboxx.biz")
-Employee.create(first_name:"Nadya", last_name:"Fortier", function:"Director", phone:"roc-kets", email:"nadya.fortier@codeboxx.biz" )
-Employee.create(first_name:"Martin", last_name:"chantal", function:"Director Assistant", phone:"roc-kets", email:"martin.chantal@codeboxx.biz" )
-Employee.create(first_name:"Mathieu", last_name:"Houde", function:"Captain", phone:"roc-kets", email:"mathieu.houde@codeboxx.biz" )
-Employee.create(first_name:"David", last_name:"Boutin", function:"Engineer", phone:"roc-kets", email:"david.boutin@codeboxx.biz" )
-Employee.create(first_name:"Mathieu", last_name:"Lortie", function:"Engineer", phone:"roc-kets", email:"mathieu.lortiet@codeboxx.biz" )
-Employee.create(first_name:"Thomas", last_name:"Carrier", function:"Engineer", phone:"roc-kets", email:"thomas.carriert@codeboxx.biz" )
-Employee.create(first_name:"Admin", last_name:"Admin", function:"Admin", phone:"roc-kets", email:"admin@admin.com" )
-Employee.create(first_name:"Admin1", last_name:"Admin1", function:"Admin1", phone:"roc-kets", email:"admin1@admin1.com" )
+def employee_create(first_name, last_name, function, phone, email)
+  @user = user_create(email, 123456, 123456, true)
+  @employee = Employee.create({first_name: first_name, last_name: last_name, function: function, phone: phone, email: email})
+  @employee.save!
+end
 
-# # for each employees we also create a user with acces to the admin panel 
+def customer_create(company_name, cpy_contact_email, tech_manager_service_email)
+  @user = user_create(cpy_contact_email, 123456, 123456, false)
+  @customer = Customer.create({company_name: company_name, cpy_contact_email: cpy_contact_email, 
+  tech_manager_service_email: tech_manager_service_email, user: @user})
+  @customer.save!
 
-Employee.all.each do |employee|
-    user = User.new({
-      email: employee.email,
-      password: 123456,
-      password_confirmation: 123456,
-      admin: true})
-    employee.user = user
-    employee.save!
-   end 
+  building_create(tech_manager_service_email, @customer)
+end 
+
+def building_create(tech_contact_email, customer)
+  @building = Building.new({tech_contact_email: tech_contact_email, customer: customer})
+  @building.save!
+
+  battery_create(@building)
+  building_detail_create(@building)
+end
+
+def address_create()
+  @address = Address.new({})
+  @address.save!
+end
+
+def building_detail_create(building)
+  @building_detail = BuildingDetail.new({building: building})
+  @building_detail.save!
+end
+
+def battery_create(building)
+  @battery = Battery.new({building: building})
+  @battery.save!
+
+  column_create(@battery)
+end
+
+def column_create(battery)
+  @column = Column.new({battery: battery})
+  @column.save!
+
+  elevator_create(@column)
+end
+
+def elevator_create(column)
+  @elevator = Elevator.new({column: column})
+  @elevator.save!
+end
+
+employee_create("Nicolas", "Genest", "CEO", 'roc-kets', "nicolas.genest@codeboxx.biz")
+employee_create("Nadya", "Fortier", "Director", "roc-kets", "nadya.fortier@codeboxx.biz")
+employee_create("Martin", "chantal", "Director Assistant", "roc-kets", "martin.chantal@codeboxx.biz")
+employee_create("Mathieu", "Houde", "Captain", "roc-kets", "mathieu.houde@codeboxx.biz")
+employee_create("David", "Boutin", "Engineer", "roc-kets", "david.boutin@codeboxx.biz")
+employee_create("Mathieu", "Lortie", "Engineer", "roc-kets", "mathieu.lortiet@codeboxx.biz")
+employee_create("Thomas", "Carrier", "Engineer", "roc-kets", "thomas.carriert@codeboxx.biz")
+employee_create("Admin1", "Admin1", "Admin1", "roc-kets", "admin1@admin1.com")
+employee_create("Admin", "Admin", "Admin", "roc-kets", "admin@admin.com")
+
+customer_create("apple", "apple@apple.com", "tech@apple.com")
+
+# To setup customers they must be entered manually by the site administrator
+
+# Customer.create(company_name: "Apple", cpy_contact_email: "apple@apple.com", 
+# tech_manager_service_email: "tech@apple.com")
+
+# for each customer we also create a user
+
+# Customer.all.each do |customer|
+#   user = User.new({
+#     email: customer.cpy_contact_email,
+#     password: 123456,
+#     password_confirmation: 123456})
+#   customer.user = user
+#   customer.save!
+#  end 
+
+
+#  Customer.all.each do |customer|
+#   building = Building.new({
+#     tech_contact_email: customer.tech_manager_service_email})
+#   building.customer_id = customer
+#   building.save!
+#  end 
+
+
+#  Building.all.each do |building|
+#   building_details = BuildingDetail.new({
+#     building_id: building})
+#   building_details.save!
+#  end 
+
+
+#  Building.all.each do |building|
+#   battery = Battery.new({
+#     building_id: building})
+#   battery.save!
+#  end 
+
 
 # # we are supplying the client with some generate data using faker
 # # so on top of our 7 employees which are also clients we will add 13 new users who dont
