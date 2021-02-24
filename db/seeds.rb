@@ -1,6 +1,7 @@
 require 'faker'
 
 
+
 def user_create(email, password, password_confirmation, admin)
   @user = User.new({email: email, password: password, password_confirmation: password_confirmation, admin: admin})
   @user.save!
@@ -69,6 +70,7 @@ def building_create(adm_contact_full_name, adm_contact_email, adm_contact_phone,
 end
 
 
+
 def address_create(type_address, status, entity, number_street, suite_apt, city, postal_code, country, notes)
   @address = Address.new({
     type_address: type_address, status: status, entity: entity, number_street: number_street, suite_apt: suite_apt, city: city,
@@ -134,16 +136,17 @@ employee_create("Admin", "Admin", "Admin", "roc-kets", "admin@admin.com")
 end
 
 
+
 13.times do
   user_create(Faker::Internet.email, 111111, 111111, false)
 end
 
 
-# Quote.create(install_fees: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
-#             quotes_name: Faker::Name.name          
-# )
-# if you fill in the quotes form it will automatically  add it to the quotes form but we will
-# also provide you with a sample using "faker"
+# # Quote.create(install_fees: Faker::Date.between(from: '2017-09-23', to: '2020-09-25'),
+# #             quotes_name: Faker::Name.name          
+# # )
+# # if you fill in the quotes form it will automatically  add it to the quotes form but we will
+# # also provide you with a sample using "faker"
 
 50.times do
   
@@ -173,4 +176,109 @@ end
               # updated_at: dateCreationUpdate,
               # created_at:dateCreationUpdate
       )
+
   end
+
+
+# #   # creating addresses for each user using faker?
+
+#   # User.all.each do |user|
+#   #   address = Address.new({
+#   #     type_adress: "User's address",
+#   #     status: "Status",
+#   #     entity: "User",                      
+#   #     number_street: Faker::Address.street_address,
+#   #     suite_apt: Faker::Address.secondary_address,
+#   #     city: Faker::Address.city,
+#   #     postal_code: Faker::Address.zip_code,
+#   #     country: Faker::Address.country,
+#   #   })
+#   #   address.save!
+#   #  end 
+
+#   # creating addresses for each building using faker
+
+
+
+# 50.times do
+#     status = ["Online", "Offline", "Online", "Online"]
+#     bt = ["Residential", "Commercial", "Corporate", "Hybrid"]
+#     ta = ["Billing", "Shipping", "Home", "Business"]
+
+#     Address.create(
+#       type_address: (ta.sample),
+#       status: (status.sample),
+#       entity: (bt.sample),
+#       number_street: Faker::Address.street_address,
+#       suite_apt: Faker::Address.secondary_address,
+#       city: Faker::Address.city,
+#       postal_code: Faker::Address.zip_code,
+#       country: Faker::Address.country,
+#       notes: Faker::Movies::BackToTheFuture.quote
+#        )
+#        
+#   end
+
+# 50.times do
+#   Building.create(
+#       adm_contact_full_name: Faker::Name.name,
+#       adm_contact_email: Faker::Internet.email,
+#       adm_contact_phone: Faker::PhoneNumber.cell_phone,
+#       tech_contact_full_name: Faker::Name.name,
+#       tech_contact_email: Faker::Internet.email,
+#       tech_contact_phone: Faker::PhoneNumber.cell_phone
+#       # customer_id: Customer.id
+#       # how to add customer_id
+#       # how to add building_id
+#   )
+# end
+# 50.times do
+#   Building_detail.create(
+#     value: "fhdkfhkdhfkhfk",
+#     info_key: "dfhkahfkhfk"
+#   )
+# end
+  #     ddress_id = address.number_street
+  #  Building.all.each do |building|
+  #   address =
+
+  #   address.save!
+  # # end 
+
+  # Building.create!(
+  #     adm_contact_full_name: Faker::Name.name,
+  #     adm_contact_email: Faker::Internet.email,
+  #     adm_contact_phone: Faker::PhoneNumber.cell_phone,
+  #     tech_contact_full_name: Faker::Name.name,
+  #     tech_contact_email: Faker::Internet.email,
+  #     tech_contact_phone: Faker::PhoneNumber.cell_phone
+  #     # how to add customer_id
+  #     # how to add building_id
+  # # )
+  # Elevator.create!(
+  #     serial_number:"dfsdfdf",
+  #     model:"dfsdfsdfsd",
+  #     type_building:"sdfsdfsdf",
+  #     status:"dfdsfsdf",
+  #     # date_comissioning:,
+  #     # date_last_inspection:,
+  #     certificate_inspection:"dfdsfsdfsdfsdf",
+  #     information:"dsfsdfsdfsdfs",
+  #     notes:"fdsfsdfsf"
+  #     # how to add column_id
+  # )
+  #  Building.all.each do |building|
+  #   address = Address.new({
+  #     type_adress: "Building address",
+  #     status: "Status",
+  #     entity: "Building",
+  #     number_street: Faker::Address.street_address,
+  #     suite_apt: Faker::Address.secondary_address,
+  #     city: Faker::Address.city,
+  #     postal_code: Faker::Address.zip_code,
+  #     country: Faker::Address.country,
+  #   })
+  #   building.address_id = address.number_street
+  #   address.save!
+  #  end 
+
