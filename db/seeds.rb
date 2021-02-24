@@ -16,8 +16,10 @@ def employee_create(first_name, last_name, function, phone, email)
 end
 
 
+
 def customer_create(company_name, cpy_contact_full_name, cpy_contact_phone, cpy_contact_email, cpy_description, tech_authority_service_full_name,
   tech_authority_service_phone, tech_manager_service_email)
+
   @user = user_create(cpy_contact_email, 123456, 123456, false)
   @customer = Customer.create({
   company_name: company_name, 
@@ -122,6 +124,7 @@ employee_create("Thomas", "Carrier", "Engineer", "roc-kets", "thomas.carriert@co
 employee_create("Admin1", "Admin1", "Admin1", "roc-kets", "admin1@admin1.com")
 employee_create("Admin", "Admin", "Admin", "roc-kets", "admin@admin.com")
 
+
 10.times do 
   customer_create(
     Faker::Company.name,
@@ -176,6 +179,7 @@ end
               # updated_at: dateCreationUpdate,
               # created_at:dateCreationUpdate
       )
+
 
   end
 
@@ -281,4 +285,5 @@ end
   #   building.address_id = address.number_street
   #   address.save!
   #  end 
+
 
