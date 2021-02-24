@@ -102,7 +102,7 @@ end
     ta = ["Billing", "Shipping", "Home", "Business"]
 
     Address.create(
-      type_adress: (ta.sample),
+      type_address: (ta.sample),
       status: (status.sample),
       entity: (bt.sample),
       number_street: Faker::Address.street_address,
