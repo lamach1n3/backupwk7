@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_02_24_164518) do
     t.date "Creation_Date"
     t.string "Company_name"
     t.string "FN_Cpy_main_ct"
-    t.string "Email_Cpy_man_ct"
+    t.string "Email_Cpy_main_ct"
     t.integer "NbElevators"
     t.string "CustomerCity"
     t.datetime "created_at", null: false
