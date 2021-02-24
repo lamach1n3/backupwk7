@@ -764,7 +764,7 @@
 					<div class="row">
 
 						<!-- FORM -->
-						<%= form_for(Lead.new) do |f| %> 
+						<%= form_for (Lead.new), html: { multipart: true } do |f| %> 
 							<div class="col-md-8 col-sm-8">
 
 								<h3>Drop us a line or just say <strong><em>Hello!</em></strong></h3>
@@ -778,8 +778,8 @@
                 			<%= f.text_field :full_name , class:"form-control" %>
 										</div>
 										<div id="contact_email" class="col-md-4" >
-												<%= f.label :email %>
-                				<%= f.email_field :email, class:"form-control" %>
+											<%= f.label :email %>
+                			<%= f.email_field :email, class:"form-control" %>
 										</div>
 										<div id="contact_phone" class="col-md-4" >
 											<%= f.label :phone %>
@@ -815,8 +815,8 @@
 									</div>	
 									<div class="row">
 										<div class="col-md-12">
-											<%= f.label :file_attachement %>
-  										<%= f.file_field :contact_attachment %>
+										<%= f.label :file_attachment %>
+  										<%= f.file_field :file_attachment %>
 											<!-- custom file upload -->
 											<%# <% <input id="attachment" class="custom-file-upload" type="file" id="file" name="contactattachment" data-btn-text="Select a File" /> %>
 											<%# <small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small> %>
@@ -834,6 +834,27 @@
 						</div>
 						
 						<!-- /FORM -->
+						<%# <%= image_tag Lead.first.file_attachment.url %> %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 						<!-- INFO -->

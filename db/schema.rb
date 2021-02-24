@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_234856) do
-  
+ActiveRecord::Schema.define(version: 2021_02_24_205345) do
+
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "type_adress"
     t.string "status"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-  
+
   create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "type_building"
     t.string "status"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.index ["building_id"], name: "index_batteries_on_building_id"
     t.index ["employee_id"], name: "index_batteries_on_employee_id"
   end
-  
+
   create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "info_key"
     t.string "value"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.bigint "building_id"
     t.index ["building_id"], name: "index_building_details_on_building_id"
   end
-  
+
   create_table "buildings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "adm_contact_full_name"
     t.string "adm_contact_email"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.index ["address_id"], name: "index_buildings_on_address_id"
     t.index ["customer_id"], name: "index_buildings_on_customer_id"
   end
-  
+
   create_table "columns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "type_building"
     t.integer "number_floors_served"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.bigint "battery_id"
     t.index ["battery_id"], name: "index_columns_on_battery_id"
   end
-  
+
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date_create"
     t.string "company_name"
@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.index ["address_id"], name: "index_customers_on_address_id"
     t.index ["user_id"], name: "index_customers_on_user_id"
   end
-  
+
   create_table "elevators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "serial_number"
     t.string "model"
@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.bigint "column_id"
     t.index ["column_id"], name: "index_elevators_on_column_id"
   end
-  
+
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.bigint "user_id"
     t.index ["user_id"], name: "index_employees_on_user_id"
   end
-  
+
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "full_name"
     t.string "email"
@@ -133,11 +133,14 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.string "department"
     t.string "project_description"
     t.text "message"
-    t.binary "contact_attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "file_attachment_file_name"
+    t.string "file_attachment_content_type"
+    t.integer "file_attachment_file_size"
+    t.datetime "file_attachment_updated_at"
   end
-  
+
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "number_of_apartments"
     t.integer "number_of_floors"
@@ -162,7 +165,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-  
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -175,7 +178,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-  
+
   add_foreign_key "batteries", "buildings"
   add_foreign_key "batteries", "employees"
   add_foreign_key "building_details", "buildings"
