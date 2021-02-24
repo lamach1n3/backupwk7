@@ -96,24 +96,24 @@ end
 
 
 
-# 50.times do
-#     status = [")nline", "Offline", "Online", "Online"]
-#     bt = ["Residential", "Commercial", "Corporate", "Hybrid"]
-#     ta = ["Billing", "Shipping", "Home", "Business"]
+50.times do
+    status = ["Online", "Offline", "Online", "Online"]
+    bt = ["Residential", "Commercial", "Corporate", "Hybrid"]
+    ta = ["Billing", "Shipping", "Home", "Business"]
 
-#     Address.create(
-#       type_adress: (ta.sample),
-#       status: (status.sample),
-#       entity: (bt.sample),
-#       number_street: Faker::Address.street_address,
-#       suite_apt: Faker::Address.secondary_address,
-#       city: Faker::Address.city,
-#       postal_code: Faker::Address.zip_code,
-#       country: Faker::Address.country,
-#       notes: Faker::Movies::BackToTheFuture.quote
-#        )
+    Address.create(
+      type_adress: (ta.sample),
+      status: (status.sample),
+      entity: (bt.sample),
+      number_street: Faker::Address.street_address,
+      suite_apt: Faker::Address.secondary_address,
+      city: Faker::Address.city,
+      postal_code: Faker::Address.zip_code,
+      country: Faker::Address.country,
+      notes: Faker::Movies::BackToTheFuture.quote
+       )
        
-#   end
+  end
 
 50.times do
   Building.create(
@@ -123,8 +123,15 @@ end
       tech_contact_full_name: Faker::Name.name,
       tech_contact_email: Faker::Internet.email,
       tech_contact_phone: Faker::PhoneNumber.cell_phone
+      # customer_id: Customer.id
       # how to add customer_id
       # how to add building_id
+  )
+end
+50.times do
+  Building_detail.create(
+    value: "fhdkfhkdhfkhfk",
+    info_key: "dfhkahfkhfk"
   )
 end
   #     ddress_id = address.number_street
@@ -132,27 +139,27 @@ end
   #   address =
 
   #   address.save!
-  # end 
+  # # end 
 
-  Building.create!(
-      adm_contact_full_name: Faker::Name.name,
-      adm_contact_email: Faker::Internet.email,
-      adm_contact_phone: Faker::PhoneNumber.cell_phone,
-      tech_contact_full_name: Faker::Name.name,
-      tech_contact_email: Faker::Internet.email,
-      tech_contact_phone: Faker::PhoneNumber.cell_phone
-      # how to add customer_id
-      # how to add building_id
-  )
-  Elevator.create!(
-      serial_number:"dfsdfdf",
-      model:"dfsdfsdfsd",
-      type_building:"sdfsdfsdf",
-      status:"dfdsfsdf",
-      # date_comissioning:,
-      # date_last_inspection:,
-      certificate_inspection:"dfdsfsdfsdfsdf",
-      information:"dsfsdfsdfsdfs",
-      notes:"fdsfsdfsf"
-      # how to add column_id
-  )
+  # Building.create!(
+  #     adm_contact_full_name: Faker::Name.name,
+  #     adm_contact_email: Faker::Internet.email,
+  #     adm_contact_phone: Faker::PhoneNumber.cell_phone,
+  #     tech_contact_full_name: Faker::Name.name,
+  #     tech_contact_email: Faker::Internet.email,
+  #     tech_contact_phone: Faker::PhoneNumber.cell_phone
+  #     # how to add customer_id
+  #     # how to add building_id
+  # # )
+  # Elevator.create!(
+  #     serial_number:"dfsdfdf",
+  #     model:"dfsdfsdfsd",
+  #     type_building:"sdfsdfsdf",
+  #     status:"dfdsfsdf",
+  #     # date_comissioning:,
+  #     # date_last_inspection:,
+  #     certificate_inspection:"dfdsfsdfsdfsdf",
+  #     information:"dsfsdfsdfsdfs",
+  #     notes:"fdsfsdfsf"
+  #     # how to add column_id
+  # )

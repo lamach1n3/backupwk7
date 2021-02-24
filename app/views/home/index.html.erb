@@ -768,7 +768,7 @@
 						<div class="col-md-8 col-sm-8">
 
 							<h3>Drop us a line or just say <strong><em>Hello!</em></strong></h3>
-							<form enctype="multipart/form-data">
+							
 								<fieldset>
 									<input type="hidden" name="action" value="contact_send" />
 
@@ -816,20 +816,21 @@
 							
 									
 							
-							<%# =============================attachment file upload================================ %>
+								<%# =============================attachment file upload================================ %>
 									<div class="row">
 											<div class="col-md-12"> 
 		  
-
+												<%# 
 												<label for="contact_attachment">File Attachment</label>
 								
 												<!-- custom file upload -->
 												<input id="attachment" class="custom-file-upload" type="file" id="file" name="contact[contact_attachment]"data-btn-text="Select a File" />
-												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
-
+												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small> %>
+											
 											</div>
+												<%= f.file_field :file %>
 									</div>
-							<%# =============================attachment file upload================================ %>
+								<%# =============================attachment file upload================================ %>
 
 								</fieldset>
 
@@ -838,7 +839,7 @@
 										<%= submit_tag "Send Message" , class: 'btn btn-primary'  %><i class:"fa fa-check"></i>
 									</div>
 								</div>
-							</form>
+							
 							<% end %>
 						</div>
 						
