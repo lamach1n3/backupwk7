@@ -96,6 +96,7 @@ end
 
 
 
+<<<<<<< HEAD
 50.times do
     status = ["Online", "Offline", "Online", "Online"]
     bt = ["Residential", "Commercial", "Corporate", "Hybrid"]
@@ -163,3 +164,19 @@ end
   #     notes:"fdsfsdfsf"
   #     # how to add column_id
   # )
+=======
+  #  Building.all.each do |building|
+  #   address = Address.new({
+  #     type_adress: "Building address",
+  #     status: "Status",
+  #     entity: "Building",
+  #     number_street: Faker::Address.street_address,
+  #     suite_apt: Faker::Address.secondary_address,
+  #     city: Faker::Address.city,
+  #     postal_code: Faker::Address.zip_code,
+  #     country: Faker::Address.country,
+  #   })
+  #   building.address_id = address.number_street
+  #   address.save!
+  #  end 
+>>>>>>> dev
