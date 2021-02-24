@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_02_22_234856) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "type_adress"
+    t.string "type_address"
     t.string "status"
     t.string "entity"
     t.string "number_street"
