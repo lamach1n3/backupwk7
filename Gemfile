@@ -30,9 +30,11 @@ gem 'pg'
 gem 'multiverse'
 
 
-
 gem 'paperclip'
 gem 'rails_admin_import', '~> 2.2'
+
+gem 'chartkick'
+gem 'groupdate'
 
 # ===============================================================
 # ===============================================================

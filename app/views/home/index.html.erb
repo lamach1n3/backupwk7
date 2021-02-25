@@ -1,3 +1,4 @@
+
 	<!-- REVOLUTION SLIDER -->
 			<div class="slider fullwidthbanner-container roundedcorners">
 				<div class="fullwidthbanner" data-height="600" data-shadow="0" data-navigationStyle="preview2">
@@ -166,7 +167,10 @@
 			</section>
 			<!-- /Services -->
 
-			
+			<script src="https://code.highcharts.com/highcharts.js"></script>
+
+
+			<%= column_chart User.group_by_day(:created_at).count %>
 
 
 			<!-- Parallax -->
