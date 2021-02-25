@@ -25,7 +25,9 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "building_id"
+    t.bigint "customer_id"
     t.index ["building_id"], name: "index_addresses_on_building_id"
+    t.index ["customer_id"], name: "index_addresses_on_customer_id"
   end
 
   create_table "batteries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -179,6 +181,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
   end
 
   add_foreign_key "addresses", "buildings"
+  add_foreign_key "addresses", "customers"
   add_foreign_key "batteries", "buildings"
   add_foreign_key "batteries", "employees"
   add_foreign_key "building_details", "buildings"
