@@ -8,28 +8,10 @@ require 'csv'
 # status = ["Online", "Offline", "Online", "Online"]
 # id,address_type,status,entity,adress,appartment,city,postal_code,country,notes,created_at,updated_at
 
-csv_text = File.read(Rails.root.join('lib','address2.csv'))
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-csv.each do |row|   
-    t = Address.new
-    t.id = row['id']
-    t.type_address = row['address_type']
-    t.status = row['status']
-    # entity what do you mean by that in the addresse table
-    # t.entity = row['entity']
-    t.number_street = row['adress']
-    # t.suite_apt = row['appartment']
-    t.city = row['city']
-    t.postal_code = row['postal_code']
-    t.country = row['country']
-    t.notes = row['notes']
-    t.created_at = ['created_at']
-    t.updated_at = ['updated_at']
-    t.save!
-  end
-  
 
 def init() 
+
+  address_create()
 
   employee_create("Nicolas", "Genest", "CEO", 'roc-kets', "nicolas.genest@codeboxx.biz")
   employee_create("Nadya", "Fortier", "Director", "roc-kets", "nadya.fortier@codeboxx.biz")
@@ -123,17 +105,7 @@ def customer_create(company_name, cpy_contact_full_name, cpy_contact_phone, cpy_
     tech_authority_service_full_name: tech_authority_service_full_name, 
     tech_authority_service_phone: tech_authority_service_phone, 
     tech_manager_service_email: tech_manager_service_email, 
-    address: address_create( # Not randomized yet
-      "A", 
-      "B", 
-      "C", 
-      "123", 
-      "456", 
-      "D", 
-      "123132", 
-      "Canada", 
-      Faker::Quote.jack_handey
-    ),
+    address: find_random_address('Customer'),
     user: @user})
   @customer.save!
 
@@ -159,16 +131,7 @@ def building_create(adm_contact_full_name, adm_contact_email, adm_contact_phone,
     tech_contact_email: tech_contact_email, 
     tech_contact_phone: tech_contact_phone, 
     customer: customer, 
-    address: address_create( # Not randomized yet
-      "A", 
-      "B", 
-      "C", 
-      "123", 
-      "456", 
-      "D", 
-      "123132", 
-      "Canada", 
-      Faker::Quote.jack_handey)})
+    address: find_random_address('Building')})
   @building.save!
 
   battery_create(
@@ -187,18 +150,34 @@ def building_create(adm_contact_full_name, adm_contact_email, adm_contact_phone,
 end
 
 
-def address_create(type_address, status, entity, number_street, suite_apt, city, postal_code, country, notes)
-  @address = Address.new({
-    type_address: type_address, 
-    status: status, 
-    entity: entity, 
-    number_street: number_street, 
-    suite_apt: suite_apt, 
-    city: city,
-    postal_code:postal_code, 
-    country: country, 
-    notes: notes})
-  @address.save!
+def address_create()
+  require 'csv'
+  ta = ["Billing", "Shipping", "Home", "Business"]
+  status = ["Online", "Offline", "Online", "Online"]
+  csv_text = File.read(Rails.root.join('lib','address_8.csv'))
+  csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+  dateCreationUpdate = Faker::Date.between(from: '2017-09-23', to: '2020-09-25')
+  csv.each do |row|   
+      t = Address.new
+      t.id = row['id']
+      t.type_address = (ta.sample)
+      t.status = (status.sample)
+      t.number_street = row['number_street']
+      t.suite_apt = row['suite_apt']
+      t.city = row['city']
+      t.postal_code = row['postal_code']
+      t.country = row['country']
+      t.notes = Faker::Quote.robin
+      t.created_at = dateCreationUpdate
+      t.updated_at = dateCreationUpdate
+      t.save!
+    end
+end
+
+
+def find_random_address(entity)
+  @address = Address.order("RAND()").first
+  @address.entity = entity
   return @address
 end
 
