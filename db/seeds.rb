@@ -168,8 +168,8 @@ def address_create()
       t.postal_code = row['postal_code']
       t.country = row['country']
       t.notes = Faker::Quote.robin
-      t.created_at = dateCreationUpdate
-      t.updated_at = dateCreationUpdate
+      t.created_at = Faker::Date.between(from: '2017-09-23', to: '2020-09-25')
+      t.updated_at = Faker::Date.between(from: '2017-09-23', to: '2020-09-25')
       t.save!
     end
 end

@@ -143,7 +143,17 @@ buildingdetails
 columns
 eelvators
 
+start readme
 
+seed en function
+gem added 
+- 
+rake task
+setup postgresql
+new tables added
+file attachement
+deploy
+make seed for leads
 
 
 
