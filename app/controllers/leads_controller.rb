@@ -3,19 +3,13 @@ class LeadsController < ApplicationController
         @lead = Lead.new
     end
 
-   def create
+    def create
         
-       
+        # file = lead_params.delete(:file)
+        # filedata = file.read
         
         @lead = Lead.new(lead_params)
-
-
-        # @lead.file_attachment = filedata
-
-
-        # lead.file_attachment.attach(params[:file_attachmet])
-
-
+        # @lead.contact_attachment = filedata
         @lead.save!
         
         if @lead.save
