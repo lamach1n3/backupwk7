@@ -104,7 +104,7 @@ def customer_create(company_name, cpy_contact_full_name, cpy_contact_phone, cpy_
       "D", 
       "123132", 
       "Canada", 
-      "yoyo"
+      Faker::Quote.jack_handey
     ),
     user: @user})
   @customer.save!
@@ -140,7 +140,7 @@ def building_create(adm_contact_full_name, adm_contact_email, adm_contact_phone,
       "D", 
       "123132", 
       "Canada", 
-      "yoyo")})
+      Faker::Quote.jack_handey)})
   @building.save!
 
   battery_create(
