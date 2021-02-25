@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_24_205345) do
+ActiveRecord::Schema.define(version: 2021_02_25_210103) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "type_address"
@@ -137,12 +137,10 @@ ActiveRecord::Schema.define(version: 2021_02_24_205345) do
     t.string "department"
     t.string "project_description"
     t.text "message"
+    t.binary "file_attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "file_attachment_file_name"
-    t.string "file_attachment_content_type"
-    t.integer "file_attachment_file_size"
-    t.datetime "file_attachment_updated_at"
+    t.string "filename"
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
