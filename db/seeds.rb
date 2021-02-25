@@ -1,9 +1,12 @@
 require 'faker'
 
 
-
 def user_create(email, password, password_confirmation, admin)
-  @user = User.new({email: email, password: password, password_confirmation: password_confirmation, admin: admin})
+  @user = User.new({
+    email: email, 
+    password: password, 
+    password_confirmation: password_confirmation, 
+    admin: admin})
   @user.save!
   return @user
 end
@@ -11,26 +14,30 @@ end
 
 def employee_create(first_name, last_name, function, phone, email)
   @user = user_create(email, 123456, 123456, true)
-  @employee = Employee.create({first_name: first_name, last_name: last_name, function: function, phone: phone, email: email, user: @user})
+  @employee = Employee.create({
+    first_name: first_name, 
+    last_name: last_name, 
+    function: function, 
+    phone: phone, 
+    email: email, 
+    user: @user})
   @employee.save!
 end
 
 
-
 def customer_create(company_name, cpy_contact_full_name, cpy_contact_phone, cpy_contact_email, cpy_description, tech_authority_service_full_name,
   tech_authority_service_phone, tech_manager_service_email)
-
   @user = user_create(cpy_contact_email, 123456, 123456, false)
   @customer = Customer.create({
-  company_name: company_name, 
-  cpy_contact_full_name: cpy_contact_full_name, 
-  cpy_contact_phone: cpy_contact_phone, 
-  cpy_contact_email: cpy_contact_email, 
-  cpy_description: cpy_description, 
-  tech_authority_service_full_name: tech_authority_service_full_name, 
-  tech_authority_service_phone: tech_authority_service_phone, 
-  tech_manager_service_email: tech_manager_service_email, 
-  user: @user})
+    company_name: company_name, 
+    cpy_contact_full_name: cpy_contact_full_name, 
+    cpy_contact_phone: cpy_contact_phone, 
+    cpy_contact_email: cpy_contact_email, 
+    cpy_description: cpy_description, 
+    tech_authority_service_full_name: tech_authority_service_full_name, 
+    tech_authority_service_phone: tech_authority_service_phone, 
+    tech_manager_service_email: tech_manager_service_email, 
+    user: @user})
   @customer.save!
 
   rand(1..3).times do 
@@ -48,68 +55,128 @@ end
 
 def building_create(adm_contact_full_name, adm_contact_email, adm_contact_phone, tech_contact_full_name, tech_contact_email, tech_contact_phone, customer)
   @building = Building.new({
-  adm_contact_full_name: adm_contact_full_name, 
-  adm_contact_email: adm_contact_email, 
-  adm_contact_phone: adm_contact_phone, 
-  tech_contact_full_name: tech_contact_full_name, 
-  tech_contact_email: tech_contact_email, 
-  tech_contact_phone: tech_contact_phone, 
-  customer: customer, 
-  address: address_create( # Not randomized yet
-    "A", 
-    "B", 
-    "C", 
-    "123", 
-    "456", 
-    "D", 
-    "123132", 
-    "Canada", 
-    "yoyo")})
+    adm_contact_full_name: adm_contact_full_name, 
+    adm_contact_email: adm_contact_email, 
+    adm_contact_phone: adm_contact_phone, 
+    tech_contact_full_name: tech_contact_full_name, 
+    tech_contact_email: tech_contact_email, 
+    tech_contact_phone: tech_contact_phone, 
+    customer: customer, 
+    address: address_create( # Not randomized yet
+      "A", 
+      "B", 
+      "C", 
+      "123", 
+      "456", 
+      "D", 
+      "123132", 
+      "Canada", 
+      "yoyo")})
   @building.save!
 
-  battery_create(@building)
-  building_detail_create(@building)
+  battery_create(
+    ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
+    ["Online", "Online", "Online", "Online", "Offline"].sample,
+    Faker::Date.between(from: '2018-02-27', to: '2021-02-27'),
+    Faker::Date.between(from: '2020-02-27', to: '2021-02-27'),
+    "Certificate example",
+    Faker::Quote.robin,
+    Faker::Quote.jack_handey,
+    @building)
+  building_detail_create(
+    "info_key example",
+    "value example",
+    @building)
 end
-
 
 
 def address_create(type_address, status, entity, number_street, suite_apt, city, postal_code, country, notes)
   @address = Address.new({
-    type_address: type_address, status: status, entity: entity, number_street: number_street, suite_apt: suite_apt, city: city,
-    postal_code:postal_code, country: country, notes: notes})
+    type_address: type_address, 
+    status: status, 
+    entity: entity, 
+    number_street: number_street, 
+    suite_apt: suite_apt, 
+    city: city,
+    postal_code:postal_code, 
+    country: country, 
+    notes: notes})
   @address.save!
   return @address
 end
 
 
-def building_detail_create(building)
-  @building_detail = BuildingDetail.new({building: building})
+def building_detail_create(info_key, value, building)
+  @building_detail = BuildingDetail.new({
+    info_key: info_key,
+    value: value,
+    building: building})
   @building_detail.save!
 end
 
 
-def battery_create(building)
-  @battery = Battery.new({building: building})
+def battery_create(type_building, status, date_commissioning, date_last_inspection, certificate_operations, information, notes, entity)
+  @battery = Battery.new({
+    type_building: type_building,
+    status: status,
+    date_commissioning: date_commissioning,
+    date_last_inspection: date_last_inspection,
+    certificate_operations: certificate_operations,
+    information: information,
+    notes: notes,
+    building: entity})
   @battery.save!
 
   rand(1..6).times do
-    column_create(@battery)
+    column_create(
+      type_building,
+      rand(2..50),
+      status,
+      Faker::Quote.robin,
+      Faker::Quote.jack_handey,
+      @battery)
   end
 end
 
 
-def column_create(battery)
-  @column = Column.new({battery: battery})
+def column_create(type_building, number_floors_served, status, information, notes, battery)
+  @column = Column.new({
+    type_building: type_building,
+    number_floors_served: number_floors_served,
+    status: status,
+    information: information,
+    notes: notes,
+    battery: battery})
   @column.save!
 
   rand(2..4).times do
-    elevator_create(@column)
+    elevator_create(
+      Faker::Number.number(digits: 10),
+      "Model",
+      type_building,
+      ["Online", "Online", "Online", "Online", "Offline"].sample,
+      Faker::Date.between(from: '2018-02-27', to: '2021-02-27'),
+      Faker::Date.between(from: '2020-02-27', to: '2021-02-27'),
+      "Certificate example",
+      Faker::Quote.robin,
+      Faker::Quote.jack_handey,
+      @column)
   end
 end
 
 
-def elevator_create(column)
-  @elevator = Elevator.new({column: column})
+def elevator_create(serial_number, model, type_building, status, date_commissioning, date_last_inspection, certificate_inspection, information, notes, column)
+  @elevator = Elevator.new({
+    serial_number: serial_number,
+    model: model,
+    type_building: type_building,
+    status: status,
+    date_commissioning: date_commissioning,
+    date_last_inspection: date_last_inspection,
+    certificate_inspection: certificate_inspection,
+    information: information,
+    notes: notes,
+    column: column})
   @elevator.save!
 end
 
@@ -137,7 +204,6 @@ employee_create("Admin", "Admin", "Admin", "roc-kets", "admin@admin.com")
     Faker::Internet.email
   )  
 end
-
 
 
 13.times do

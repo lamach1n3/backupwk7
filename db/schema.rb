@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_234856) do
     t.string "model"
     t.string "type_building"
     t.string "status"
-    t.date "date_comissioning"
+    t.date "date_commissioning"
     t.date "date_last_inspection"
     t.string "certificate_inspection"
     t.string "information"
