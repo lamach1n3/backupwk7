@@ -210,7 +210,7 @@ end
     ta = ["Billing", "Shipping", "Home", "Business"]
 
     Address.create(
-      type_adress: (ta.sample),
+      type_address: (ta.sample),
       status: (status.sample),
       entity: (bt.sample),
       number_street: Faker::Address.street_address,
@@ -450,4 +450,32 @@ end
     #   building.address_id = address.number_street
     #   address.save!
     #  end 
+  
+    # "first_name","last_name","company_name","address","city","county","state","zip","phone1","phone2","email","web"
+# , :encoding => 'ISO-8859-1'
+require 'csv'
+# ta = ["Billing", "Shipping", "Home", "Business"]
+# to check status of address
+# status = ["Online", "Offline", "Online", "Online"]
+# id,address_type,status,entity,adress,appartment,city,postal_code,country,notes,created_at,updated_at
+
+csv_text = File.read(Rails.root.join('lib','address2.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|   
+    t = Address.new
+    t.id = row['id']
+    t.type_address = row['address_type']
+    t.status = row['status']
+    # entity what do you mean by that in the addresse table
+    # t.entity = row['entity']
+    t.number_street = row['adress']
+    # t.suite_apt = row['appartment']
+    t.city = row['city']
+    t.postal_code = row['postal_code']
+    t.country = row['country']
+    t.notes = row['notes']
+    t.created_at = ['created_at']
+    t.updated_at = ['updated_at']
+    t.save!
+  end
   
