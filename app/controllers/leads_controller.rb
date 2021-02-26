@@ -16,7 +16,6 @@ class LeadsController < ApplicationController
         
         @lead.save!
         if @lead.save
-            Rake::Task['dbr:contacts'].invoke
             redirect_to main_app.root_path, notice: "Message sent!"
         else    
             redirect_to "/leads", notice: "Invalid fields!"
