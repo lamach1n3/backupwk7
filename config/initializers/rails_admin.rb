@@ -7,6 +7,10 @@ RailsAdmin.config do |config|
       redirect_to main_app.root_path
     end
   end
+
+
+
+  
   ## == Devise ==
   # config.authenticate_with do
   #   warden.authenticate! scope: :user
@@ -47,4 +51,8 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.navigation_static_links = {
+    'Charts' => '/charts'
+  }
 end

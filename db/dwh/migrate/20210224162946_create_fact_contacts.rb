@@ -1,11 +1,11 @@
 class CreateFactContacts < ActiveRecord::Migration[5.2]
   def change
     create_table :fact_contacts do |t|
-      t.integer :ContactId
-      t.date :Creation_Date
-      t.string :Company_name
-      t.string :Email
-      t.string :Project_Name
+      t.integer :contact_id
+      t.date :creation_date
+      t.string :company_name
+      t.string :email
+      t.string :project_name
 
       t.timestamps
     end
