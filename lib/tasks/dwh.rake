@@ -40,7 +40,7 @@ namespace :dbr do
         building.batteries.each do |battery|
           battery.columns.each do |column|
             column.elevators.each do |elevator|
-              dwh.exec_prepared('to_fact_elevators', [elevator.serial_number, elevator.date_commissioning, battery.building_id, battery.building.customer_id, building.customer.address.city])
+              dwh.exec_prepared('to_fact_elevators', [elevator.serial_number, elevator.date_commissioning, battery.building_id, battery.building.customer_id, building.address.city])
               # pp elevator
             end
           end
