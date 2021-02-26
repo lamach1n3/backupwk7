@@ -35,13 +35,13 @@ namespace :dbr do
     dwh.exec("TRUNCATE fact_elevators")
 
     dwh.prepare('to_fact_elevators', 'INSERT INTO fact_elevators (serial_number, date_commissioning, building_id, customer_id, building_city, created_at, updated_at) VALUES ($1, $2, $3, $4, $5, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)')
-    Customer.all.each do |customer|          
+    Customer.all.each do |customer|    
       customer.buildings.each do |building|
         building.batteries.each do |battery|
           battery.columns.each do |column|
             column.elevators.each do |elevator|
+              # puts building.address.city
               dwh.exec_prepared('to_fact_elevators', [elevator.serial_number, elevator.date_commissioning, battery.building_id, battery.building.customer_id, building.address.city])
-              # pp elevator
             end
           end
         end
