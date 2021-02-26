@@ -1,5 +1,4 @@
 require 'faker'
-require 'rake'
 
 # "first_name","last_name","company_name","address","city","county","state","zip","phone1","phone2","email","web"
 # , :encoding => 'ISO-8859-1'
