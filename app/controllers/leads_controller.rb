@@ -2,17 +2,19 @@ class LeadsController < ApplicationController
     def new
         @lead = Lead.new
     end
-
+    
     def create
         puts (params) 
         file = lead_params[:file]
-        filedata = file.read
-     
         @lead = Lead.new(lead_params.except(:file))
-        @lead.file_attachment = filedata
-        @lead.filename = file.original_filename
-        @lead.save!
+        if !file.nil?
+            filedata = file.read
+            
+            @lead.file_attachment = filedata
+            @lead.filename = file.original_filename
+        end
         
+        @lead.save!
         if @lead.save
             redirect_to main_app.root_path, notice: "Message sent!"
         else    
