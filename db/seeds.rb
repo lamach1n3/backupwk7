@@ -184,7 +184,6 @@ def find_random_address(entity)
     @address = Address.order("RAND()").first
     if @address.customer.nil? && @address.building.nil?
       @address.entity = entity
-      puts @address
       return @address
     end
   end
