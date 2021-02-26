@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get '/charts'      =>  'backoffice#charts'
   post '/leads'     => 'leads#create'
   post '/quotes'      => 'quotes#create'
+  
 
    
   devise_scope :user do 
@@ -33,6 +34,11 @@ Rails.application.routes.draw do
     get "/signin"     => "devise/sessions#new" 
     get "/signout"    => "devise/sessions#destroy"
     get "/changepassword" => "devise/passwords#new"
+
+    post "/signup"     => "devise/registrations#new" 
+    post "/signin"     => "devise/sessions#new" 
+    post "/signout"    => "devise/sessions#destroy"
+    post "/changepassword" => "devise/passwords#new"
   end
 
   Rails.application.routes.draw do
