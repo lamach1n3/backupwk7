@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_02_26_054713) do
   enable_extension "plpgsql"
 
   create_table "dim_customers", force: :cascade do |t|
-    t.date "creation_Date"
+    t.date "creation_date"
     t.string "company_name"
     t.string "fn_cpy_main_ct"
     t.string "email_cpy_main_ct"
