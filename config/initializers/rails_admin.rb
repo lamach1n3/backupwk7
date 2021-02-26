@@ -52,7 +52,7 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.navigation_static_links = {
-    'Charts' => '/charts'
-  }
+  # config.navigation_static_links = {
+  #   'Charts' => '/charts'
+  # }
 end
