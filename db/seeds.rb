@@ -41,7 +41,6 @@ def init()
     50.times do
       pl = ["Standard", "Premium", "Excelium"]
       bt = ["Residential", "Commercial", "Corporate", "Hybrid"]
-      dateCreationUpdate = Faker::Date.between(from: '2017-09-23', to: '2020-09-25')
   Quote.create(
               install_fees: Faker::Number.between(from: 500, to: 2000),
               total_price: Faker::Number.between(from: 50000, to: 200000),
@@ -63,7 +62,7 @@ def init()
               number_of_elevators: Faker::Number.between(from: 1, to: 15),
               unit_price: Faker::Number.between(from: 11000, to: 15000),
               # updated_at: dateCreationUpdate,
-              # created_at:dateCreationUpdate
+              created_at:Faker::Date.between(from: '2018-02-23', to: '2021-2-25')
       )
   end
 end
