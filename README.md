@@ -24,10 +24,14 @@ Application for website of the Company of Rocket Elevators
 6. Using the Database with Rails
 7. Accessing the admin section
 8. Routes.rb
-9. URL for our site
+9. URL for our site https://rocketmax.xyz/
 10. Gem used
 11. Diagram
 12. Video link
+
+- week 4 https://youtu.be/1h2rkXGJY-c
+
+- week 5
 13. Team
 
 
@@ -118,22 +122,22 @@ https://rocketmax.xyz/
             -run : Hirb.enable ( everytime you open the console)
 
 * gem 'cancancan'
-      https://github.com/CanCanCommunity/cancancan
+      https://github.com/CanCanCommunity/cancancan added week 5
 
 * gem 'pg'
-      https://github.com/ged/ruby-pg
+      https://github.com/ged/ruby-pg added week 5
 
 * gem 'multiverse'
-      https://github.com/ankane/multiverse
+      https://github.com/ankane/multiverse added week 5
 
 * gem 'rails_admin_import', '~> 2.2'
-      https://github.com/stephskardal/rails_admin_import
+      https://github.com/stephskardal/rails_admin_import added week 5
 
 * gem 'chartkick'
-      https://github.com/ankane/chartkick
+      https://github.com/ankane/chartkick added week 5
 
 * gem 'groupdate'
-      https://github.com/ankane/groupdate
+      https://github.com/ankane/groupdate added week 5
 
 11 - The final product of our database for this week with its association represented in a Diagram (https://dbdiagram.io/)
 ![](app/assets/images/readme/wk4tablediagram.png)
@@ -147,7 +151,7 @@ https://youtu.be/1h2rkXGJY-c
 
 
 
-
+# Rocket Elevators Information System <img src="app/assets/images/favicon.png" align="right" alt="Rocket Elevators logo by Maxime Auger" width="100" height="">
 # Week 5
 
 
@@ -166,10 +170,18 @@ A data warehouse for decision-making
 - batteries
 - columns
 - elevators
+![](app/assets/images/readme/week5_mysql_diagram.png)
 
 3. postgresql is going to be our data warehouse for decision-making
+
+
+
 - to connect to your postgresql DB you nees to start it with this command line: 
 **sudo service postgresql start/stop/status**
+
+
+![](app/assets/images/readme/postgresql.png)
+
 4.  also to  create and migrate tables its very similar to mysql except you add  DB=nameOfDatabase: 
 
 - **DB=dwh rails db:create**
@@ -181,13 +193,33 @@ A data warehouse for decision-making
 - FactElevator
 - DimCustomers
 
-6.Rake tasks
+![](app/assets/images/readme/week5_postgresql_diagram.png)
+
+6. updated Admin section with charts and new tables mysql and postgresql
+![](app/assets/images/readme/railsadminwk5.png)
+7. Rake tasks
 
   Rake tasks are custom build executable files that we are using to populate the postgresql database (Dwh) from our seeded data and submit data from web pages (quotes and contact us forms). Within theses task we establish a connection to our mysql DB and postgres DB, 
   
-  - **dwh = PG::Connection.new(host: 'localhost', port: port, dbname: "dbname", user: "user", password: "password")**
-  
-  (actual data to  connect is in the rake file not the read me)
+ 
+
+      (actual data to  connect is in the rake file not the read me)
+This is an example of a rake task
+
+  ``` Ruby
+  desc "Import data from Quote Table to Fact Quote Table"
+  task quotes: :environment do
+    dwh = PG::Connection.new(host: 'localhost', port: port, dbname: "dbname", user: "user", password: "password")
+    puts "lead table to fact_quote table"
+    
+    dwh.exec("TRUNCATE fact_quotes")
+
+    dwh.prepare('to_fact_quotes', 'INSERT INTO fact_quotes (quote_id, creation, company_name, email, nb_elevator, created_at, updated_at) VALUES ($1, $2, $3, $4, $5, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)')
+    Quote.all.each do |quotes|
+      dwh.exec_prepared('to_fact_quotes', [quotes.id, quotes.created_at, quotes.quotes_company_name, quotes.quotes_email, quotes.elevator_amount])
+    end
+  end 
+  ```
 
 
 
