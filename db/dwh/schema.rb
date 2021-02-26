@@ -10,48 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_24_164518) do
+ActiveRecord::Schema.define(version: 2021_02_26_054713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "dim_customers", force: :cascade do |t|
-    t.date "Creation_Date"
-    t.string "Company_name"
-    t.string "FN_Cpy_main_ct"
-    t.string "Email_Cpy_main_ct"
-    t.integer "NbElevators"
-    t.string "CustomerCity"
+    t.date "creation_Date"
+    t.string "company_name"
+    t.string "fn_cpy_main_ct"
+    t.string "email_cpy_main_ct"
+    t.integer "nb_elevators"
+    t.string "customer_city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "fact_contacts", force: :cascade do |t|
-    t.integer "ContactId"
-    t.date "Creation_Date"
-    t.string "Company_name"
-    t.string "Email"
-    t.string "Project_Name"
+    t.integer "contact_id"
+    t.datetime "creation_date"
+    t.string "company_name"
+    t.string "email"
+    t.string "project_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "fact_elevators", force: :cascade do |t|
-    t.string "SerialNumber"
-    t.date "Date_Commissioning"
-    t.integer "BuildingId"
-    t.integer "CustomerId"
-    t.string "Building_City"
+    t.string "serial_number"
+    t.date "date_commissioning"
+    t.integer "building_id"
+    t.integer "customer_id"
+    t.string "building_city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "fact_quotes", force: :cascade do |t|
-    t.integer "QuoteId"
-    t.date "Creation"
-    t.string "Company_Name"
-    t.string "Email"
-    t.integer "NbElevator"
+    t.integer "quote_id"
+    t.date "creation"
+    t.string "company_name"
+    t.string "email"
+    t.integer "nb_elevator"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

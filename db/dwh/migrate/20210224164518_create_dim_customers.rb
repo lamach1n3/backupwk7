@@ -9,6 +9,7 @@ class CreateDimCustomers < ActiveRecord::Migration[5.2]
       t.string :customer_city
 
       t.timestamps
+      
     end
   end
 end
