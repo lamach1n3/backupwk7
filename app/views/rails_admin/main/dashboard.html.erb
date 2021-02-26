@@ -1,7 +1,3 @@
-<% if !current_user || !current_user.admin %>
-    <%= redirect_to '/home' %>
-<% end %>
-
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
