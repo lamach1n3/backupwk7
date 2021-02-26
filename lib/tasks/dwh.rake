@@ -29,7 +29,7 @@ namespace :dbr do
 
 
   # desc "Import data from product"
-  # task :elevators do
+  # task elevators: :environment do
   #   dwh = PG::Connection.new(host: 'localhost', port: 5432, dbname: "MaximeAuger_psql", user: "postgres", password: "postgres")
 
   #   dwh.exec("TRUNCATE fact_elevators")
@@ -40,7 +40,8 @@ namespace :dbr do
   #       building.batteries.each do |battery|
   #         battery.columns.each do |column|
   #           column.elevators.each do |elevator|
-  #             dwh.exec_prepared('to_fact_elevators', [elevator.serial_number, elevator.date_commissioning, battery.building_id, battery.customer_id, building.address.city])
+  #             # dwh.exec_prepared('to_fact_elevators', [elevator.serial_number, elevator.date_commissioning, battery.building_id, battery.customer_id, building.address.city])
+  #             pp elevator
   #           end
   #         end
   #       end
