@@ -117,6 +117,24 @@ https://rocketmax.xyz/
             -open rails console in terminal
             -run : Hirb.enable ( everytime you open the console)
 
+* gem 'cancancan'
+      https://github.com/CanCanCommunity/cancancan
+
+* gem 'pg'
+      https://github.com/ged/ruby-pg
+
+* gem 'multiverse'
+      https://github.com/ankane/multiverse
+
+* gem 'rails_admin_import', '~> 2.2'
+      https://github.com/stephskardal/rails_admin_import
+
+* gem 'chartkick'
+      https://github.com/ankane/chartkick
+
+* gem 'groupdate'
+      https://github.com/ankane/groupdate
+
 11 - The final product of our database for this week with its association represented in a Diagram (https://dbdiagram.io/)
 ![](wk4tablediagram.png)
 
@@ -124,7 +142,67 @@ https://rocketmax.xyz/
 https://youtu.be/1h2rkXGJY-c
 
 
-13 - OUR TEAM !!!!!
+
+
+
+
+
+
+# Week 5
+
+
+During this week, participants are exposed to a more elaborate data model and must perform basic query exercises. They will be asked to create tables, alter them and extend the concepts managed by their information system.
+Two types of databases will be requested for this exercise
+A relational database
+A data warehouse for decision-making
+
+1. create a link to the postgresql database
+2. tables added in mysql
+- address
+- leads
+- customers
+- buildings
+- building_details
+- batteries
+- columns
+- elevators
+
+3. postgresql is going to be our data warehouse for decision-making
+- to connect to your postgresql DB you nees to start it with this command line: 
+**sudo service postgresql start/stop/status**
+4.  also to  create and migrate tables its very similar to mysql except you add  DB=nameOfDatabase: 
+
+- **DB=dwh rails db:create**
+- **DB=dwh rails db:migrate**
+
+5. the tables created for postgres
+- FactQuotes
+- FactContact
+- FactElevator
+- DimCustomers
+
+6.Rake tasks
+
+  Rake tasks are custom build executable files that we are using to populate the postgresql database (Dwh) from our seeded data and submit data from web pages (quotes and contact us forms). Within theses task we establish a connection to our mysql DB and postgres DB, 
+  
+  - **dwh = PG::Connection.new(host: 'localhost', port: port, dbname: "dbname", user: "user", password: "password")**
+  
+  (actual data to  connect is in the rake file not the read me)
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ OUR TEAM !!!!!
 - Adrien Gobeil
 - Charles Hall
 - Eric Turcotte
@@ -132,25 +210,13 @@ https://youtu.be/1h2rkXGJY-c
 - Maxime Auger
 
 
-added 
 
-mysql table 
-leads
-addresses
-batteries
-buildings
-buildingdetails
-columns
-eelvators
-
-start readme
 
 seed en function
 gem added 
 - 
 rake task
-setup postgresql
-new tables added
+
 file attachement
 deploy
 make seed for leads
