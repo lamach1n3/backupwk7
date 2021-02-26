@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+  
+	<%# <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <meta charset="utf-8" />
 		<link rel="icon" type="image/png" href="/assets/favicon.png">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
 
 		<title>Rocket Elevators | Home</title>
 		<meta name="description" content="">
@@ -32,7 +35,6 @@
 		<link href="/assets/css/header-1.css" rel="stylesheet" type="text/css" />
 		<link href="/assets/css/color_scheme/red.css" rel="stylesheet" type="text/css" id="color_scheme" />
 	</head>
-    
 
   <body>
     <%= render 'home/header' %>
