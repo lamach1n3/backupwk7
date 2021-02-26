@@ -7,9 +7,6 @@ RailsAdmin.config do |config|
       redirect_to main_app.root_path
     end
   end
-
-
-
   
   ## == Devise ==
   # config.authenticate_with do

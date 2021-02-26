@@ -130,7 +130,7 @@ def building_create(adm_contact_full_name, adm_contact_email, adm_contact_phone,
     tech_contact_full_name: tech_contact_full_name, 
     tech_contact_email: tech_contact_email, 
     tech_contact_phone: tech_contact_phone, 
-    customer: customer, 
+    customer: customer,
     address: find_random_address('Building')})
   @building.save!
 
