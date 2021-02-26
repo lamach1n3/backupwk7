@@ -171,8 +171,8 @@ def address_create()
       t.longitude = row['longitude']
       t.latitude = row['latitude']
       t.notes = Faker::Quote.robin
-      t.created_at = Faker::Date.between(from: '1962-09-23', to: '2015-09-20')
-      t.updated_at = Faker::Date.between(from: '2015-09-23', to: '2020-09-25')
+      t.created_at = Faker::Date.between(from: '2018-09-23', to: '2021-09-20')
+      t.updated_at = Faker::Date.between(from: '2018-09-23', to: '2021-09-25')
       t.save!
     end
 end
