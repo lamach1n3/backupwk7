@@ -1,4 +1,5 @@
 require 'faker'
+require 'rake'
 
 # "first_name","last_name","company_name","address","city","county","state","zip","phone1","phone2","email","web"
 # , :encoding => 'ISO-8859-1'
@@ -184,7 +185,6 @@ def find_random_address(entity)
     @address = Address.order("RAND()").first
     if @address.customer.nil? && @address.building.nil?
       @address.entity = entity
-      puts @address
       return @address
     end
   end
