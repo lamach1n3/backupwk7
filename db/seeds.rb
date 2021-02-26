@@ -94,6 +94,7 @@ end
 
 def customer_create(company_name, cpy_contact_full_name, cpy_contact_phone, cpy_contact_email, cpy_description, tech_authority_service_full_name,
   tech_authority_service_phone, tech_manager_service_email)
+  @address = find_random_address('Customer')
   @user = user_create(cpy_contact_email, 123456, 123456, false)
   @customer = Customer.create({
     date_create: Faker::Date.between(from: '2018-02-27', to: '2021-02-27'),
@@ -105,7 +106,7 @@ def customer_create(company_name, cpy_contact_full_name, cpy_contact_phone, cpy_
     tech_authority_service_full_name: tech_authority_service_full_name, 
     tech_authority_service_phone: tech_authority_service_phone, 
     tech_manager_service_email: tech_manager_service_email, 
-    address: find_random_address('Customer'),
+    address: @address,
     user: @user})
   @customer.save!
 
@@ -123,6 +124,7 @@ end
 
 
 def building_create(adm_contact_full_name, adm_contact_email, adm_contact_phone, tech_contact_full_name, tech_contact_email, tech_contact_phone, customer)
+  @address = find_random_address('Building')
   @building = Building.new({
     adm_contact_full_name: adm_contact_full_name, 
     adm_contact_email: adm_contact_email, 
@@ -131,9 +133,8 @@ def building_create(adm_contact_full_name, adm_contact_email, adm_contact_phone,
     tech_contact_email: tech_contact_email, 
     tech_contact_phone: tech_contact_phone, 
     customer: customer,
-    address: find_random_address('Building')})
+    address: @address})
   @building.save!
-
   battery_create(
     ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
     ["Online", "Online", "Online", "Online", "Offline"].sample,
@@ -170,18 +171,23 @@ def address_create()
       t.country = row['country']
       t.longitude = row['longitude']
       t.latitude = row['latitude']
-      t.notes = Faker::Quote.robin
-      t.created_at = Faker::Date.between(from: '1962-09-23', to: '2015-09-20')
-      t.updated_at = Faker::Date.between(from: '2015-09-23', to: '2020-09-25')
+      t.notes = "1"
+      t.created_at = Faker::Date.between(from: '2018-09-23', to: '2021-09-20')
+      t.updated_at = Faker::Date.between(from: '2018-09-23', to: '2021-09-25')
       t.save!
     end
 end
 
 
 def find_random_address(entity)
-  @address = Address.order("RAND()").first
-  @address.entity = entity
-  return @address
+  Address.all.each do 
+    @address = Address.order("RAND()").first
+    if @address.customer.nil? && @address.building.nil?
+      @address.entity = entity
+      puts @address
+      return @address
+    end
+  end
 end
 
 
