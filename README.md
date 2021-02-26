@@ -41,12 +41,12 @@ some conversion to your static page. we used this link a lot to help us out at f
 https://tatyanacodes.wordpress.com/2015/07/30/static-website-to-ruby-on-rails-web-application/
 We build some partials which are in charge of loading the footers and headers for all pages
 
-![](partials.png)
+![](app/assets/images/readme/partials.png)
 
 2 - Linux terminal for windows where all the magic happens this week. Within this terminal is where you will enable your rails server like so
 - type in the terminal : rails server (keep in mind for this to work you should have Ubuntu, rails, ruby, mysql and postgresql installed)
 
-![](ubuntu.png)
+![](app/assets/images/readme/ubuntu.png)
 
 3 - installing mysql on ubuntu  https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
 
@@ -58,13 +58,13 @@ We build some partials which are in charge of loading the footers and headers fo
 - rails db:migrate
 - rails db:seed ( used to populate your database if needed)
 
-![](mysql.png)
+![](app/assets/images/readme/mysql.png)
 
 5 - Ruby on rails Back office was produced using mainly 2 gems rails-admin et devise
 - devise was mainly used for the signin, signup and log in
 - rails-admin for the admin section the whole back office
 
-![](backoffice.png)
+![](app/assets/images/readme/backoffice.png)
 
 6 - To access the database from the rails server 
 - rails c
@@ -72,7 +72,7 @@ We build some partials which are in charge of loading the footers and headers fo
 - User.all to query the users
 - exit to exit the console
 
-![](railsdb.png)
+![](app/assets/images/readme/railsdb.png)
 
 7 - 📚 Instructions to acces to the admin panel:
 
@@ -84,12 +84,12 @@ To log as Admin:
 3. password: 123456
 4. click on the admin button in nav bar
 ```
-![](login.png)
+![](app/assets/images/readme/login.png)
 
 8 - Routes is the backbone that directs the application to different pages using controllers
 
 
-![](routes.png)
+![](app/assets/images/readme/routes.png)
 
 9 - you can access our live site @
 https://rocketmax.xyz/
@@ -136,7 +136,7 @@ https://rocketmax.xyz/
       https://github.com/ankane/groupdate
 
 11 - The final product of our database for this week with its association represented in a Diagram (https://dbdiagram.io/)
-![](wk4tablediagram.png)
+![](app/assets/images/readme/wk4tablediagram.png)
 
 12 - Link to our Video for week 4
 https://youtu.be/1h2rkXGJY-c
@@ -220,6 +220,8 @@ rake task
 file attachement
 deploy
 make seed for leads
+
+
 
 
 
