@@ -4,12 +4,13 @@ class LeadsController < ApplicationController
     end
 
     def create
-        
-        # file = lead_params.delete(:file)
-        # filedata = file.read
-        
-        @lead = Lead.new(lead_params)
-        # @lead.contact_attachment = filedata
+        puts (params) 
+        file = lead_params[:file]
+        filedata = file.read
+     
+        @lead = Lead.new(lead_params.except(:file))
+        @lead.file_attachment = filedata
+        @lead.filename = file.original_filename
         @lead.save!
         
         if @lead.save
@@ -23,6 +24,6 @@ class LeadsController < ApplicationController
 
     def lead_params
       params.require(:lead).permit(:full_name, :email, :phone, :company_name, :project_name, :department, :project_description,
-      :message, :file_attachment, :image)
+      :message, :file_attachment, :file, :image)
     end
 end

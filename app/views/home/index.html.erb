@@ -812,13 +812,11 @@
 											<%= f.text_area :message, :cols => 54, :rows => 6 %>											</div>
 										</div>
 									</div>	
+								<%# =============================attachment file upload================================ %>
 									<div class="row">
 										<div class="col-md-12">
-										<%= f.label :file_attachment %>
-  										<%= f.file_field :file_attachment %>
-											<!-- custom file upload -->
-											<%# <% <input id="attachment" class="custom-file-upload" type="file" id="file" name="contactattachment" data-btn-text="Select a File" /> %>
-											<%# <small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small> %>
+										<%= f.label :file %>
+  										<%= f.file_field :file %>
 										</div>
 									</div>
 								<%# =============================attachment file upload================================ %>
