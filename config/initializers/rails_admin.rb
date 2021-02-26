@@ -7,9 +7,6 @@ RailsAdmin.config do |config|
       redirect_to main_app.root_path
     end
   end
-
-
-
   
   ## == Devise ==
   # config.authenticate_with do
@@ -52,7 +49,7 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.navigation_static_links = {
-    'Charts' => '/charts'
-  }
+  # config.navigation_static_links = {
+  #   'Charts' => '/charts'
+  # }
 end

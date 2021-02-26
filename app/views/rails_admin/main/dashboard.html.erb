@@ -1,19 +1,16 @@
-<% if !current_user || !current_user.admin %>
-    <%= redirect_to '/home' %>
-<% end %>
-
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+<%= javascript_include_tag "//www.google.com/jsapi" %>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 
 <h3>Monthly Quotes</h3>
-<%= column_chart FactQuotes.group_by_month(:created_at).count %>
+<%= column_chart FactQuotes.group_by_month(:creation).count %>
 
 <h3>Monthly Contact Requests</h3>
-<%= column_chart FactContact.group_by_month(:created_at).count %>
+<%= column_chart FactContact.group_by_month(:creation_date).count %>
 
 <h3>Elevators Per Customer</h3>
-<%= column_chart Elevator.group(:column_id).count %>
+<%= column_chart DimCustomers.group(:nb_elevators).count %>
 
 <h3>Quote Product Lines</h3>
 <%= pie_chart Quote.group(:product_line).count %>
