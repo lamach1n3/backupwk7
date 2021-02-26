@@ -154,7 +154,7 @@ def address_create()
   ta = ["Billing", "Shipping", "Home", "Business"]
   status = ["Online", "Offline", "Online", "Online"]
   entity = ["Building", "Customer"]
-  csv_text = File.read(Rails.root.join('lib','address_8.csv'))
+  csv_text = File.read(Rails.root.join('lib','address_final.csv'))
   csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
   csv.each do |row|   
       t = Address.new
@@ -167,8 +167,8 @@ def address_create()
       t.city = row['city']
       t.postal_code = row['postal_code']
       t.country = row['country']
-      # t.longitude = row['longitude']
-      # t.latitude = row['latitude']
+      t.longitude = row['longitude']
+      t.latitude = row['latitude']
       t.notes = Faker::Quote.robin
       t.created_at = Faker::Date.between(from: '1962-09-23', to: '2015-09-20')
       t.updated_at = Faker::Date.between(from: '2015-09-23', to: '2020-09-25')
