@@ -221,7 +221,9 @@ This is an example of a rake task
   end 
   ```
 
+8. File attachement in the contact us form was also added and supports all types of files. the filename can be seen in the admin section of the leads table and in the database.
 
+9. 
 
 
 
@@ -244,14 +246,7 @@ This is an example of a rake task
 
 
 
-seed en function
-gem added 
-- 
-rake task
 
-file attachement
-deploy
-make seed for leads
 
 
 
