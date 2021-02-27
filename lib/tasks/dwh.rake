@@ -12,6 +12,7 @@ namespace :dbr do
     Quote.all.each do |quotes|
       dwh.exec_prepared('to_fact_quotes', [quotes.id, quotes.created_at, quotes.quotes_company_name, quotes.quotes_email, quotes.elevator_amount])
     end
+    
   end
 
   desc "Import data from Lead Table to Fact Contacts Table"

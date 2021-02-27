@@ -24,14 +24,14 @@ Application for website of the Company of Rocket Elevators
 6. Using the Database with Rails
 7. Accessing the admin section
 8. Routes.rb
-9. URL for our site https://rocketmax.xyz/
+9. URL for our site http://rocketmax.xyz/
 10. Gem used
 11. Diagram
 12. Video link
 
 - week 4 https://youtu.be/1h2rkXGJY-c
 
-- week 5
+- week 5 https://youtu.be/9A7IXR1kIfo
 13. Team
 
 
@@ -196,7 +196,7 @@ A data warehouse for decision-making
 ![](app/assets/images/readme/week5_postgresql_diagram.png)
 
 6. updated Admin section with charts and new tables mysql and postgresql
-![](app/assets/images/readme/railsadminwk5.png)
+![](app/assets/images/readme/wk5updadmin.png)
 7. Rake tasks
 
   Rake tasks are custom build executable files that we are using to populate the postgresql database (Dwh) from our seeded data and submit data from web pages (quotes and contact us forms). Within theses task we establish a connection to our mysql DB and postgres DB, 
@@ -221,11 +221,14 @@ This is an example of a rake task
   end 
   ```
 
+8. File attachement in the contact us form was also added and supports all types of files. the filename can be seen in the admin section of the leads table and in the database.
 
+9. Charts were added in the admin panel through chartskick
+10. updated routes week 5
 
+![](app/assets/images/readme/week5routes.png)
 
-
-
+11. week 5 video link :  https://youtu.be/9A7IXR1kIfo
 
  
 
@@ -241,17 +244,10 @@ This is an example of a rake task
 - Jean-Francois Taillefer
 - Maxime Auger
 
+read me created by jean-francois taillefer
 
 
 
-seed en function
-gem added 
-- 
-rake task
-
-file attachement
-deploy
-make seed for leads
 
 
 
