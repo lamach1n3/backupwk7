@@ -196,7 +196,7 @@ A data warehouse for decision-making
 ![](app/assets/images/readme/week5_postgresql_diagram.png)
 
 6. updated Admin section with charts and new tables mysql and postgresql
-![](app/assets/images/readme/.png)
+![](app/assets/images/readme/wk5updadmin.png)
 7. Rake tasks
 
   Rake tasks are custom build executable files that we are using to populate the postgresql database (Dwh) from our seeded data and submit data from web pages (quotes and contact us forms). Within theses task we establish a connection to our mysql DB and postgres DB, 
