@@ -31,7 +31,7 @@ Application for website of the Company of Rocket Elevators
 
 - week 4 https://youtu.be/1h2rkXGJY-c
 
-- week 5
+- week 5 https://youtu.be/9A7IXR1kIfo
 13. Team
 
 
@@ -228,10 +228,7 @@ This is an example of a rake task
 
 ![](app/assets/images/readme/week5routes.png)
 
-
-
-
-
+11. week 5 video link :  https://youtu.be/9A7IXR1kIfo
 
  
 
@@ -247,7 +244,7 @@ This is an example of a rake task
 - Jean-Francois Taillefer
 - Maxime Auger
 
-
+read me created by jean-francois taillefer
 
 
 
