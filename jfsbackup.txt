@@ -17,6 +17,9 @@
    copy and paste the database
 
 ++++++++++++++++++++
+
+
+
 default: &default
   adapter: mysql2
   encoding: utf8
